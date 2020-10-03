@@ -42,6 +42,91 @@ public class PlayerScript : MonoBehaviour
             switch (soupRequestNumber)
             {
                 case 0:
+                    if (soupAmount <= 55.5f)
+                    {
+                        if (Input.GetKey(KeyCode.Space))
+                        {
+                            soupAmount += 0.5f;
+                        }
+
+                        if (Input.GetKeyUp(KeyCode.Space))
+                        {
+                            if (soupAmount <= 50.0f && soupAmount >= 47.0f)
+                            {
+                                score += 1;
+                            }
+                            else
+                            {
+                                life -= 1;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        life -= 1;
+                    }
+                    Debug.Log(soupAmount);
+                    Invoke("servingFalse", 1.0f);
+                    break;
+
+
+                case 1:
+                    if (soupAmount <= 45.5f)
+                    {
+                        if (Input.GetKey(KeyCode.Space))
+                        {
+                            soupAmount += 0.5f;
+                        }
+
+                        if (Input.GetKeyUp(KeyCode.Space))
+                        {
+                            if (soupAmount <= 40.0f && soupAmount >= 37.0f)
+                            {
+                                score += 1;
+                            }
+                            else
+                            {
+                                life -= 1;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        life -= 1;
+                    }
+                    Debug.Log(soupAmount);
+                    Invoke("servingFalse", 1.0f);
+                    break;
+
+                case 2:
+                    if (soupAmount <= 35.5f)
+                    {
+                        if (Input.GetKey(KeyCode.Space))
+                        {
+                            soupAmount += 0.5f;
+                        }
+
+                        if (Input.GetKeyUp(KeyCode.Space))
+                        {
+                            if (soupAmount <= 30.0f && soupAmount >= 27.0f)
+                            {
+                                score += 1;
+                            }
+                            else
+                            {
+                                life -= 1;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        life -= 1;
+                    }
+                    Debug.Log(soupAmount);
+                    Invoke("servingFalse", 1.0f);
+                    break;
+
+                case 3:
                     if (soupAmount <= 25.5f)
                     {
                         if (Input.GetKey(KeyCode.Space))
@@ -58,17 +143,51 @@ public class PlayerScript : MonoBehaviour
                             else
                             {
                                 life -= 1;
-                                serving = false;
                             }
                         }
                     }
                     else
                     {
                         life -= 1;
-                        serving = false;
                     }
+                    Debug.Log(soupAmount);
+                    Invoke("servingFalse", 1.0f);
                     break;
+
+                case 4:
+                    if (soupAmount <= 15.5f)
+                    {
+                        if (Input.GetKey(KeyCode.Space))
+                        {
+                            soupAmount += 0.5f;
+                        }
+
+                        if (Input.GetKeyUp(KeyCode.Space))
+                        {
+                            if (soupAmount <= 10.0f && soupAmount >= 5.0f)
+                            {
+                                score += 1;
+                            }
+                            else
+                            {
+                                life -= 1;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        life -= 1;
+                    }
+                    Debug.Log(soupAmount);
+                    Invoke("servingFalse", 1.0f);
+                    break;
+
             }
         }
+    }
+
+    void servingFalse()
+    {
+        serving = false;
     }
 }
