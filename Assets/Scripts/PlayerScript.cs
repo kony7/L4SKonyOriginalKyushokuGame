@@ -37,7 +37,7 @@ public class PlayerScript : MonoBehaviour
             requestText.GetComponent<Text>().text = "スープ" + amountRequestText[soupRequestNumber] + " おかず" + amountRequestText[sidedishRequestNumber];
             serving = true;
         }
-        else
+        else if(serving == true)
         {
             switch (soupRequestNumber)
             {
