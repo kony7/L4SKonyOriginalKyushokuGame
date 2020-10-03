@@ -32,10 +32,9 @@ public class PlayerScript : MonoBehaviour
     {
         if(serving == false)
         {
-            soupRequestNumber = Random.Range(0, 5);
-            sidedishRequestNumber = Random.Range(0, 5);
-            requestText.GetComponent<Text>().text = "スープ" + amountRequestText[soupRequestNumber] + " おかず" + amountRequestText[sidedishRequestNumber];
+            textRequest();
             serving = true;
+
         }
         else if(serving == true)
         {
@@ -205,5 +204,13 @@ public class PlayerScript : MonoBehaviour
     void servingFalse()
     {
         serving = false;
+    }
+
+    void textRequest()
+    {
+        soupRequestNumber = Random.Range(0, 5);
+        sidedishRequestNumber = Random.Range(0, 5);
+        requestText.GetComponent<Text>().text = "スープ" + amountRequestText[soupRequestNumber] + " おかず" + amountRequestText[sidedishRequestNumber];
+  
     }
 }
