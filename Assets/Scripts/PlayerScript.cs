@@ -31,7 +31,7 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
     }
 
     // Update is called once per frame
@@ -52,14 +52,14 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 50.0f && soupAmount >= 47.0f)
                             {
                                 score += 1;
-                            kickoutStudent();
+                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
                             createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                         }
                             else
                             {
                                 life -= 1;
-                            kickoutStudent();
+                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
                             createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                         }
@@ -68,7 +68,7 @@ public class PlayerScript : MonoBehaviour
                     else if (soupAmount < 0.1f)
                     {
                         life -= 1;
-                    kickoutStudent();
+                    createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                     textRequest();
                     createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                 }
@@ -90,14 +90,14 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 40.0f && soupAmount >= 37.0f)
                             {
                                 score += 1;
-                            kickoutStudent();
+                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
                             createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                         }
                             else
                             {
                                 life -= 1;
-                            kickoutStudent();
+                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
                             createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                         }
@@ -106,7 +106,7 @@ public class PlayerScript : MonoBehaviour
                     else if (soupAmount < 0.1f)
                     {
                         life -= 1;
-                    kickoutStudent();
+                    createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                     textRequest();
                     createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                 }
@@ -126,14 +126,14 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 30.0f && soupAmount >= 27.0f)
                             {
                                 score += 1;
-                            kickoutStudent();
+                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
                             createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                         }
                             else
                             {
                                 life -= 1;
-                            kickoutStudent();
+                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
                             createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                         }
@@ -142,7 +142,7 @@ public class PlayerScript : MonoBehaviour
                     else if (soupAmount < 0.1f)
                     {
                         life -= 1;
-                    kickoutStudent();
+                    createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                     textRequest();
                     createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                 }
@@ -162,14 +162,14 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 20.0f && soupAmount >= 17.0f)
                             {
                                 score += 1;
-                            kickoutStudent();
+                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
                             createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                         }
                             else
                             {
                                 life -= 1;
-                            kickoutStudent();
+                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
                             createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                         }
@@ -178,7 +178,7 @@ public class PlayerScript : MonoBehaviour
                     else if (soupAmount < 0.1f)
                     {
                         life -= 1;
-                    kickoutStudent();
+                    createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                     textRequest();
                     createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                 }
@@ -198,14 +198,14 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 10.0f && soupAmount >= 5.0f)
                             {
                                 score += 1;
-                            kickoutStudent();
+                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
                             createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                         }
                             else
                             {
                                 life -= 1;
-                            kickoutStudent();
+                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
                             createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                         }
@@ -214,7 +214,7 @@ public class PlayerScript : MonoBehaviour
                     else if(soupAmount < 0.1f)
                     {
                         life -= 1;
-                    kickoutStudent();
+                    createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                     textRequest();
                     createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                 }
@@ -240,17 +240,17 @@ public class PlayerScript : MonoBehaviour
   
     }
 
-    void kickoutStudent()
-    {
-        if (tooutStudent.transform.position.x > -6.5f)
-        {
-            tooutStudent.transform.position += new Vector3(0.5f, 0, 0);
-        }
-        else
-        {
-            Destroy(tooutStudent,0f);
-        }
-    }
+    //void kickoutStudent()
+    //{
+    //    if (tooutStudent.transform.position.x > -6.5f)
+    //    {
+    //        tooutStudent.transform.position += new Vector3(0.5f, 0, 0);
+    //    }
+    //    else
+    //    {
+    //        Destroy(tooutStudent,0f);
+    //    }
+    //}
 
     //void createNewStudent()
     //{
