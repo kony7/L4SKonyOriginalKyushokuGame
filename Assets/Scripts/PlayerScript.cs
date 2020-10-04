@@ -271,10 +271,7 @@ public class PlayerScript : MonoBehaviour
 
         if(life == 0)
         {
-            gameObjects.SetActive(false);
-            gameUIs.SetActive(false);
-            scoreText.GetComponent<Text>().text = score.ToString();
-            ending.SetActive(true);
+            Invoke("goToEnding", 1.2f);
         }
     }
 
@@ -287,26 +284,13 @@ public class PlayerScript : MonoBehaviour
   
     }
 
-    //void kickoutStudent()
-    //{
-    //    if (tooutStudent.transform.position.x > -6.5f)
-    //    {
-    //        tooutStudent.transform.position += new Vector3(0.5f, 0, 0);
-    //    }
-    //    else
-    //    {
-    //        Destroy(tooutStudent,0f);
-    //    }
-    //}
-
-    //void createNewStudent()
-    //{
-    //    Instantiate(toinStudent, new Vector3(5.3f, -18.042f, -38.0f), transform.rotation);
-    //    if (toinStudent.transform.position.x > 0)
-    //    {
-    //        toinStudent.transform.position -= new Vector3(0.5f, 0, 0);
-    //    }
-    //}
+    void goToEnding()
+    {
+        gameObjects.SetActive(false);
+        gameUIs.SetActive(false);
+        scoreText.GetComponent<Text>().text = score.ToString();
+        ending.SetActive(true);
+    }
 
     public void restart()
     {
