@@ -21,17 +21,19 @@ public class MoveStudentsScript : MonoBehaviour
     public void createNewStudent()
     {
         Instantiate(student, transform.position, transform.rotation);
+        Debug.Log("今生まれた生徒はここにいます" + student.transform.position.x);
         if (student.transform.position.x > 0.2f)
         {
-            student.transform.position -= new Vector3(0.5f, 0, 0);
+            student.transform.position -= new Vector3(0.5f, 0f, 0f);
         }
     }
 
     public void kickOutStudent()
     {
-         if (student.transform.position.x > -5.8f)
+        Debug.Log("今どけたい生徒はここにいます" + student.transform.position.x);
+        if (student.transform.position.x > -5.8f)
             {
-                student.transform.position += new Vector3(0.5f, 0, 0);
+                student.transform.position += new Vector3(0.5f, 0f, 0f);
             }
             else
             {

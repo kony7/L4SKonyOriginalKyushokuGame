@@ -40,7 +40,7 @@ public class PlayerScript : MonoBehaviour
             switch (soupRequestNumber)
             {
                 case 0:
-                    if (soupAmount <= 55.5f)
+                    if (soupAmount <= 18.5f)
                     {
                         if (Input.GetKey(KeyCode.Space))
                         {
@@ -49,9 +49,11 @@ public class PlayerScript : MonoBehaviour
 
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
-                            if (soupAmount <= 50.0f && soupAmount >= 47.0f)
+                            if (soupAmount <= 18.0f && soupAmount >= 17.7f)
                             {
                                 score += 1;
+                            Debug.Log("成功");
+                            soupAmount = 0;
                             createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
                             createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
@@ -59,15 +61,19 @@ public class PlayerScript : MonoBehaviour
                             else
                             {
                                 life -= 1;
+                            Debug.Log("少なすぎ");
+                            soupAmount = 0;
                             createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
                             createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                         }
                         }
                     }
-                    else if (soupAmount < 0.1f)
+                    else
                     {
                         life -= 1;
+                    Debug.Log("多すぎ");
+                    soupAmount = 0;
                     createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                     textRequest();
                     createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
@@ -78,114 +84,6 @@ public class PlayerScript : MonoBehaviour
 
 
                 case 1:
-                    if (soupAmount <= 45.5f)
-                    {
-                        if (Input.GetKey(KeyCode.Space))
-                        {
-                            soupAmount += 0.1f;
-                        }
-
-                        if (Input.GetKeyUp(KeyCode.Space))
-                        {
-                            if (soupAmount <= 40.0f && soupAmount >= 37.0f)
-                            {
-                                score += 1;
-                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                            textRequest();
-                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
-                        }
-                            else
-                            {
-                                life -= 1;
-                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                            textRequest();
-                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
-                        }
-                        }
-                    }
-                    else if (soupAmount < 0.1f)
-                    {
-                        life -= 1;
-                    createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                    textRequest();
-                    createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
-                }
-                    Debug.Log(soupAmount);
-                break;
-
-                case 2:
-                    if (soupAmount <= 35.5f)
-                    {
-                        if (Input.GetKey(KeyCode.Space))
-                        {
-                            soupAmount += 0.1f;
-                        }
-
-                        if (Input.GetKeyUp(KeyCode.Space))
-                        {
-                            if (soupAmount <= 30.0f && soupAmount >= 27.0f)
-                            {
-                                score += 1;
-                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                            textRequest();
-                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
-                        }
-                            else
-                            {
-                                life -= 1;
-                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                            textRequest();
-                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
-                        }
-                        }
-                    }
-                    else if (soupAmount < 0.1f)
-                    {
-                        life -= 1;
-                    createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                    textRequest();
-                    createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
-                }
-                    Debug.Log(soupAmount);
-                    break;
-
-                case 3:
-                    if (soupAmount <= 25.5f)
-                    {
-                        if (Input.GetKey(KeyCode.Space))
-                        {
-                            soupAmount += 0.1f;
-                        }
-
-                        if (Input.GetKeyUp(KeyCode.Space))
-                        {
-                            if (soupAmount <= 20.0f && soupAmount >= 17.0f)
-                            {
-                                score += 1;
-                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                            textRequest();
-                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
-                        }
-                            else
-                            {
-                                life -= 1;
-                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                            textRequest();
-                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
-                        }
-                        }
-                    }
-                    else if (soupAmount < 0.1f)
-                    {
-                        life -= 1;
-                    createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                    textRequest();
-                    createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
-                }
-                    Debug.Log(soupAmount);
-                    break;
-
-                case 4:
                     if (soupAmount <= 15.5f)
                     {
                         if (Input.GetKey(KeyCode.Space))
@@ -195,9 +93,11 @@ public class PlayerScript : MonoBehaviour
 
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
-                            if (soupAmount <= 10.0f && soupAmount >= 5.0f)
+                            if (soupAmount <= 15.0f && soupAmount >= 14.7f)
                             {
                                 score += 1;
+                            Debug.Log("成功");
+                            soupAmount = 0;
                             createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
                             createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
@@ -205,15 +105,145 @@ public class PlayerScript : MonoBehaviour
                             else
                             {
                                 life -= 1;
+                            Debug.Log("少なすぎ");
+                            soupAmount = 0;
                             createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
                             createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                         }
                         }
                     }
-                    else if(soupAmount < 0.1f)
+                    else 
                     {
                         life -= 1;
+                    Debug.Log("多すぎ");
+                    soupAmount = 0;
+                    createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
+                    textRequest();
+                    createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
+                }
+                    Debug.Log(soupAmount);
+                break;
+
+                case 2:
+                    if (soupAmount <= 10.5f)
+                    {
+                        if (Input.GetKey(KeyCode.Space))
+                        {
+                            soupAmount += 0.1f;
+                        }
+
+                        if (Input.GetKeyUp(KeyCode.Space))
+                        {
+                            if (soupAmount <= 10.0f && soupAmount >= 9.7f)
+                            {
+                                score += 1;
+                            Debug.Log("成功");
+                            soupAmount = 0;
+                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
+                            textRequest();
+                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
+                        }
+                            else
+                            {
+                                life -= 1;
+                            Debug.Log("少なすぎ");
+                            soupAmount = 0;
+                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
+                            textRequest();
+                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
+                        }
+                        }
+                    }
+                    else
+                    {
+                        life -= 1;
+                    Debug.Log("多すぎ");
+                    soupAmount = 0;
+                    createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
+                    textRequest();
+                    createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
+                }
+                    Debug.Log(soupAmount);
+                    break;
+
+                case 3:
+                    if (soupAmount <= 6.5f)
+                    {
+                        if (Input.GetKey(KeyCode.Space))
+                        {
+                            soupAmount += 0.1f;
+                        }
+
+                        if (Input.GetKeyUp(KeyCode.Space))
+                        {
+                            if (soupAmount <= 6.0f && soupAmount >= 5.7f)
+                            {
+                                score += 1;
+                            Debug.Log("成功");
+                            soupAmount = 0;
+                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
+                            textRequest();
+                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
+                        }
+                            else
+                            {
+                                life -= 1;
+                            Debug.Log("少なすぎ");
+                            soupAmount = 0;
+                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
+                            textRequest();
+                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
+                        }
+                        }
+                    }
+                    else
+                    {
+                        life -= 1;
+                    Debug.Log("多すぎ");
+                    soupAmount = 0;
+                    createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
+                    textRequest();
+                    createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
+                }
+                    Debug.Log(soupAmount);
+                    break;
+
+                case 4:
+                    if (soupAmount <= 3.5f)
+                    {
+                        if (Input.GetKey(KeyCode.Space))
+                        {
+                            soupAmount += 0.1f;
+                        }
+
+                        if (Input.GetKeyUp(KeyCode.Space))
+                        {
+                            if (soupAmount <= 3.0f && soupAmount >= 2.7f)
+                            {
+                                score += 1;
+                            Debug.Log("成功");
+                            soupAmount = 0;
+                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
+                            textRequest();
+                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
+                        }
+                            else
+                            {
+                                life -= 1;
+                            Debug.Log("少なすぎ");
+                            soupAmount = 0;
+                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
+                            textRequest();
+                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
+                        }
+                        }
+                    }
+                    else
+                    {
+                        life -= 1;
+                    Debug.Log("多すぎ");
+                    soupAmount = 0;
                     createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                     textRequest();
                     createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
