@@ -72,7 +72,6 @@ public class PlayerScript : MonoBehaviour
                 }
 
                     Debug.Log(soupAmount);
-                    
                     break;
 
 
