@@ -30,14 +30,14 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(serving == false)
-        {
-            textRequest();
-            serving = true;
+        //if(serving == false)
+        //{
+        //    textRequest();
+        //    serving = true;
 
-        }
-        else if(serving == true)
-        {
+        //}
+        //else if(serving == true)
+        //{
             switch (soupRequestNumber)
             {
                 case 0:
@@ -53,20 +53,23 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 50.0f && soupAmount >= 47.0f)
                             {
                                 score += 1;
-                                Invoke("servingFalse", 1.0f);
-                            }
+                            textRequest();
+                            //Invoke("servingFalse", 1.0f);
+                        }
                             else
                             {
                                 life -= 1;
-                                Invoke("servingFalse", 1.0f);
-                            }
+                            textRequest();
+                            //Invoke("servingFalse", 1.0f);
+                        }
                         }
                     }
                     else if (soupAmount < 0.1f)
                     {
                         life -= 1;
-                        Invoke("servingFalse", 1.0f);
-                    }
+                    //Invoke("servingFalse", 1.0f);
+                    textRequest();
+                }
 
                     Debug.Log(soupAmount);
                     
@@ -86,22 +89,22 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 40.0f && soupAmount >= 37.0f)
                             {
                                 score += 1;
-                                Invoke("servingFalse", 1.0f);
-                            }
+                            textRequest();
+                        }
                             else
                             {
                                 life -= 1;
-                                Invoke("servingFalse", 1.0f);
-                            }
+                            textRequest();
+                        }
                         }
                     }
                     else if (soupAmount < 0.1f)
                     {
                         life -= 1;
-                        Invoke("servingFalse", 1.0f);
-                    }
+                    textRequest();
+                }
                     Debug.Log(soupAmount);
-                    Invoke("servingFalse", 1.0f);
+                    //Invoke("servingFalse", 1.0f);
                     break;
 
                 case 2:
@@ -117,22 +120,22 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 30.0f && soupAmount >= 27.0f)
                             {
                                 score += 1;
-                                Invoke("servingFalse", 1.0f);
-                            }
+                            textRequest();
+                        }
                             else
                             {
                                 life -= 1;
-                                Invoke("servingFalse", 1.0f);
-                            }
+                            textRequest();
+                        }
                         }
                     }
                     else if (soupAmount < 0.1f)
                     {
                         life -= 1;
-                        Invoke("servingFalse", 1.0f);
-                    }
+                    textRequest();
+                }
                     Debug.Log(soupAmount);
-                    Invoke("servingFalse", 1.0f);
+
                     break;
 
                 case 3:
@@ -148,22 +151,22 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 20.0f && soupAmount >= 17.0f)
                             {
                                 score += 1;
-                                Invoke("servingFalse", 1.0f);
-                            }
+                            textRequest();
+                        }
                             else
                             {
                                 life -= 1;
-                                Invoke("servingFalse", 1.0f);
-                            }
+                            textRequest();
+                        }
                         }
                     }
                     else if (soupAmount < 0.1f)
                     {
                         life -= 1;
-                        Invoke("servingFalse", 1.0f);
-                    }
+                    textRequest();
+                }
                     Debug.Log(soupAmount);
-                    Invoke("servingFalse", 1.0f);
+
                     break;
 
                 case 4:
@@ -179,26 +182,26 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 10.0f && soupAmount >= 5.0f)
                             {
                                 score += 1;
-                                Invoke("servingFalse", 1.0f);
-                            }
+                            textRequest();
+                        }
                             else
                             {
                                 life -= 1;
-                                Invoke("servingFalse", 1.0f);
-                            }
+                            textRequest();
+                        }
                         }
                     }
                     else if(soupAmount < 0.1f)
                     {
                         life -= 1;
-                        Invoke("servingFalse", 1.0f);
-                    }
+                    textRequest();
+                }
                     Debug.Log(soupAmount);
-                    Invoke("servingFalse", 1.0f);
+
                     break;
 
             }
-        }
+        //}
     }
 
     void servingFalse()
