@@ -26,6 +26,10 @@ public class MoveStudentsScript : MonoBehaviour
         {
             student.transform.position -= new Vector3(0.5f, 0f, 0f);
         }
+        else
+        {
+            student.transform.position = new Vector3(0.2f, -0.9f, -6.0f);
+        }
     }
 
     public void kickOutStudent()

@@ -27,6 +27,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject tooutStudent;
     public GameObject toinStudent;
     public GameObject createrStudent;
+    public GameObject judgeText;
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +53,8 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 18.0f && soupAmount >= 17.7f)
                             {
                                 score += 1;
-                            Debug.Log("成功");
+                            judgeText.GetComponent<Text>().text = "ナイス";
+                            Invoke("clearJudgeText", 1.1f);
                             soupAmount = 0;
                             createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
@@ -61,7 +63,8 @@ public class PlayerScript : MonoBehaviour
                             else
                             {
                                 life -= 1;
-                            Debug.Log("少なすぎ");
+                            judgeText.GetComponent<Text>().text = "少な！";
+                            Invoke("clearJudgeText", 1.1f);
                             soupAmount = 0;
                             createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
@@ -72,7 +75,8 @@ public class PlayerScript : MonoBehaviour
                     else
                     {
                         life -= 1;
-                    Debug.Log("多すぎ");
+                    judgeText.GetComponent<Text>().text = "多い！";
+                    Invoke("clearJudgeText", 1.1f);
                     soupAmount = 0;
                     createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                     textRequest();
@@ -96,7 +100,8 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 15.0f && soupAmount >= 14.7f)
                             {
                                 score += 1;
-                            Debug.Log("成功");
+                            judgeText.GetComponent<Text>().text = "ナイス";
+                            Invoke("clearJudgeText", 1.1f);
                             soupAmount = 0;
                             createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
@@ -105,7 +110,8 @@ public class PlayerScript : MonoBehaviour
                             else
                             {
                                 life -= 1;
-                            Debug.Log("少なすぎ");
+                            judgeText.GetComponent<Text>().text = "少な！";
+                            Invoke("clearJudgeText", 1.1f);
                             soupAmount = 0;
                             createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
@@ -116,7 +122,8 @@ public class PlayerScript : MonoBehaviour
                     else 
                     {
                         life -= 1;
-                    Debug.Log("多すぎ");
+                    judgeText.GetComponent<Text>().text = "多い！";
+                    Invoke("clearJudgeText", 1.1f);
                     soupAmount = 0;
                     createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                     textRequest();
@@ -138,7 +145,8 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 10.0f && soupAmount >= 9.7f)
                             {
                                 score += 1;
-                            Debug.Log("成功");
+                            judgeText.GetComponent<Text>().text = "ナイス";
+                            Invoke("clearJudgeText", 1.1f);
                             soupAmount = 0;
                             createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
@@ -147,7 +155,8 @@ public class PlayerScript : MonoBehaviour
                             else
                             {
                                 life -= 1;
-                            Debug.Log("少なすぎ");
+                            judgeText.GetComponent<Text>().text = "少な！";
+                            Invoke("clearJudgeText", 1.1f);
                             soupAmount = 0;
                             createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
@@ -158,7 +167,8 @@ public class PlayerScript : MonoBehaviour
                     else
                     {
                         life -= 1;
-                    Debug.Log("多すぎ");
+                    judgeText.GetComponent<Text>().text = "多い！";
+                    Invoke("clearJudgeText", 1.1f);
                     soupAmount = 0;
                     createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                     textRequest();
@@ -180,7 +190,8 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 6.0f && soupAmount >= 5.7f)
                             {
                                 score += 1;
-                            Debug.Log("成功");
+                            judgeText.GetComponent<Text>().text = "ナイス";
+                            Invoke("clearJudgeText", 1.1f);
                             soupAmount = 0;
                             createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
@@ -189,7 +200,8 @@ public class PlayerScript : MonoBehaviour
                             else
                             {
                                 life -= 1;
-                            Debug.Log("少なすぎ");
+                            judgeText.GetComponent<Text>().text = "少な！";
+                            Invoke("clearJudgeText", 1.1f);
                             soupAmount = 0;
                             createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
@@ -200,7 +212,8 @@ public class PlayerScript : MonoBehaviour
                     else
                     {
                         life -= 1;
-                    Debug.Log("多すぎ");
+                    judgeText.GetComponent<Text>().text = "多い！";
+                    Invoke("clearJudgeText", 1.1f);
                     soupAmount = 0;
                     createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                     textRequest();
@@ -222,7 +235,8 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 3.0f && soupAmount >= 2.7f)
                             {
                                 score += 1;
-                            Debug.Log("成功");
+                            judgeText.GetComponent<Text>().text = "ナイス";
+                            Invoke("clearJudgeText", 1.1f);
                             soupAmount = 0;
                             createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
@@ -231,7 +245,8 @@ public class PlayerScript : MonoBehaviour
                             else
                             {
                                 life -= 1;
-                            Debug.Log("少なすぎ");
+                            judgeText.GetComponent<Text>().text = "少な！";
+                            Invoke("clearJudgeText", 1.1f);
                             soupAmount = 0;
                             createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                             textRequest();
@@ -242,7 +257,9 @@ public class PlayerScript : MonoBehaviour
                     else
                     {
                         life -= 1;
-                    Debug.Log("多すぎ");
+                    judgeText.GetComponent<Text>().text = "多い！";
+                    Invoke("clearJudgeText", 1.1f);
+
                     soupAmount = 0;
                     createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
                     textRequest();
@@ -294,5 +311,10 @@ public class PlayerScript : MonoBehaviour
     public void restart()
     {
         SceneManager.LoadScene("Start");
+    }
+
+    void clearJudgeText()
+    {
+        judgeText.GetComponent<Text>().text = " ";
     }
 }
