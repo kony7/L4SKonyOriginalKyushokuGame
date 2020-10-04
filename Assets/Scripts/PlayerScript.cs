@@ -20,6 +20,10 @@ public class PlayerScript : MonoBehaviour
     bool serving = false;
 
     public GameObject requestText;
+    public GameObject ending;
+    public GameObject scoreText;
+    public GameObject gameObjects;
+    public GameObject gameUIs;
 
     // Start is called before the first frame update
     void Start()
@@ -187,7 +191,10 @@ public class PlayerScript : MonoBehaviour
 
         if(life == 0)
         {
-           
+            gameObjects.SetActive(false);
+            gameUIs.SetActive(false);
+            scoreText.GetComponent<Text>().text = score.ToString();
+            ending.SetActive(true);
         }
     }
 
@@ -198,5 +205,10 @@ public class PlayerScript : MonoBehaviour
         sidedishRequestNumber = Random.Range(0, 5);
         requestText.GetComponent<Text>().text = "スープ" + amountRequestText[soupRequestNumber] + " おかず" + amountRequestText[sidedishRequestNumber];
   
+    }
+
+    public void restart()
+    {
+        SceneManager.LoadScene("Start");
     }
 }
