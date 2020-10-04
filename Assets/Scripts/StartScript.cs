@@ -15,7 +15,7 @@ public class StartScript : MonoBehaviour
     void Start()
     {
         intHighScore = PlayerPrefs.GetInt("HIGHSCORE", 0);
-        highScoreText.GetComponent<Text>().text = highScoreText.ToString();
+        highScoreText.GetComponent<Text>().text = intHighScore.ToString();
     }
 
     // Update is called once per frame

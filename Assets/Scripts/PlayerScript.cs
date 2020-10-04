@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour
     int life = 5;
     int soupRequestNumber;
     int sidedishRequestNumber;
+    int highScore;
 
     float soupAmount;
     float sidedishAmount;
@@ -34,6 +35,7 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
+        highScore = PlayerPrefs.GetInt("HIGHSCORE", 0);
     }
 
     // Update is called once per frame
@@ -301,6 +303,16 @@ public class PlayerScript : MonoBehaviour
         gameUIs.SetActive(false);
         scoreText.GetComponent<Text>().text = score.ToString();
         ending.SetActive(true);
+
+        if (score > highScore)
+        {
+            PlayerPrefs.SetInt("HIGHSCORE", score);
+            PlayerPrefs.Save();
+        }
+        else
+        {
+            
+        }
     }
 
     public void restart()
