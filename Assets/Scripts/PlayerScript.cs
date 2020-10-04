@@ -18,15 +18,15 @@ public class PlayerScript : MonoBehaviour
 
     string[] amountRequestText = new string[]{"大盛り","多め","普通","少なめ","少し" };
 
-    bool serving = false;
+    //bool serving = false;
+    bool beforeServing = true;
+    bool finishServing = false;
 
     public GameObject requestText;
     public GameObject ending;
     public GameObject scoreText;
     public GameObject gameObjects;
     public GameObject gameUIs;
-    public GameObject tooutStudent;
-    public GameObject toinStudent;
     public GameObject createrStudent;
     public GameObject judgeText;
     public GameObject lifePointText;
@@ -34,7 +34,7 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
+        createrStudent.GetComponent<CreateStudentsScript>().createNewStudent();
         highScore = PlayerPrefs.GetInt("HIGHSCORE", 0);
     }
 
@@ -48,47 +48,31 @@ public class PlayerScript : MonoBehaviour
                     {
                         if (Input.GetKey(KeyCode.Space))
                         {
-                            soupAmount += 0.1f;
+                        beforeServing = false;
+                        soupAmount += 0.1f;
                         }
 
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
-                            if (soupAmount <= 18.0f && soupAmount >= 17.7f)
-                            {
-                                score += 1;
-                            judgeText.GetComponent<Text>().text = "ナイス";
-                            Invoke("clearJudgeText", 1.1f);
-                            soupAmount = 0;
-                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                            textRequest();
-                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
+                        finishServing = true;
+                        if (soupAmount <= 18.0f && soupAmount >= 17.7f)
+                        {
+                            KeyUpSuccess();
+                            KeyUpAfterJudgeText();
                         }
-                            else
-                            {
-                                life -= 1;
-                            lifePointText.GetComponent<Text>().text = "LIFE：" + life;
-                            judgeText.GetComponent<Text>().text = "少な！";
-                            Invoke("clearJudgeText", 1.1f);
-                            soupAmount = 0;
-                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                            textRequest();
-                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
-                        }
+                        else
+                        {
+                            KeyUpLuck();
+                            KeyUpAfterJudgeText();
                         }
                     }
-                    else
-                    {
-                        life -= 1;
-                    lifePointText.GetComponent<Text>().text = "LIFE：" + life;
-                    judgeText.GetComponent<Text>().text = "多い！";
-                    Invoke("clearJudgeText", 1.1f);
-                    soupAmount = 0;
-                    createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                    textRequest();
-                    createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                 }
-
-                    Debug.Log(soupAmount);
+                else
+                {
+                    ServingOver();
+                    KeyUpAfterJudgeText();
+                }
+                Debug.Log(soupAmount);
                     break;
 
 
@@ -103,40 +87,23 @@ public class PlayerScript : MonoBehaviour
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
                             if (soupAmount <= 15.0f && soupAmount >= 14.7f)
-                            {
-                                score += 1;
-                            judgeText.GetComponent<Text>().text = "ナイス";
-                            Invoke("clearJudgeText", 1.1f);
-                            soupAmount = 0;
-                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                            textRequest();
-                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
+                        {
+                            KeyUpSuccess();
+                            KeyUpAfterJudgeText();
                         }
-                            else
-                            {
-                                life -= 1;
-                            lifePointText.GetComponent<Text>().text = "LIFE：" + life;
-                            judgeText.GetComponent<Text>().text = "少な！";
-                            Invoke("clearJudgeText", 1.1f);
-                            soupAmount = 0;
-                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                            textRequest();
-                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
-                        }
+                        else
+                        {
+                            KeyUpLuck();
+                            KeyUpAfterJudgeText();
                         }
                     }
-                    else 
-                    {
-                        life -= 1;
-                    lifePointText.GetComponent<Text>().text = "LIFE：" + life;
-                    judgeText.GetComponent<Text>().text = "多い！";
-                    Invoke("clearJudgeText", 1.1f);
-                    soupAmount = 0;
-                    createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                    textRequest();
-                    createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                 }
-                    Debug.Log(soupAmount);
+                else
+                {
+                    ServingOver();
+                    KeyUpAfterJudgeText();
+                }
+                Debug.Log(soupAmount);
                 break;
 
                 case 2:
@@ -150,40 +117,23 @@ public class PlayerScript : MonoBehaviour
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
                             if (soupAmount <= 10.0f && soupAmount >= 9.7f)
-                            {
-                                score += 1;
-                            judgeText.GetComponent<Text>().text = "ナイス";
-                            Invoke("clearJudgeText", 1.1f);
-                            soupAmount = 0;
-                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                            textRequest();
-                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
+                        {
+                            KeyUpSuccess();
+                            KeyUpAfterJudgeText();
                         }
-                            else
-                            {
-                                life -= 1;
-                            lifePointText.GetComponent<Text>().text = "LIFE：" + life;
-                            judgeText.GetComponent<Text>().text = "少な！";
-                            Invoke("clearJudgeText", 1.1f);
-                            soupAmount = 0;
-                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                            textRequest();
-                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
-                        }
+                        else
+                        {
+                            KeyUpLuck();
+                            KeyUpAfterJudgeText();
                         }
                     }
-                    else
-                    {
-                        life -= 1;
-                    lifePointText.GetComponent<Text>().text = "LIFE：" + life;
-                    judgeText.GetComponent<Text>().text = "多い！";
-                    Invoke("clearJudgeText", 1.1f);
-                    soupAmount = 0;
-                    createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                    textRequest();
-                    createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                 }
-                    Debug.Log(soupAmount);
+                else
+                {
+                    ServingOver();
+                    KeyUpAfterJudgeText();
+                }
+                Debug.Log(soupAmount);
                     break;
 
                 case 3:
@@ -197,40 +147,23 @@ public class PlayerScript : MonoBehaviour
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
                             if (soupAmount <= 6.0f && soupAmount >= 5.7f)
-                            {
-                                score += 1;
-                            judgeText.GetComponent<Text>().text = "ナイス";
-                            Invoke("clearJudgeText", 1.1f);
-                            soupAmount = 0;
-                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                            textRequest();
-                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
+                        {
+                            KeyUpSuccess();
+                            KeyUpAfterJudgeText();
                         }
-                            else
-                            {
-                                life -= 1;
-                            lifePointText.GetComponent<Text>().text = "LIFE：" + life;
-                            judgeText.GetComponent<Text>().text = "少な！";
-                            Invoke("clearJudgeText", 1.1f);
-                            soupAmount = 0;
-                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                            textRequest();
-                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
-                        }
+                        else
+                        {
+                            KeyUpLuck();
+                            KeyUpAfterJudgeText();
                         }
                     }
-                    else
-                    {
-                        life -= 1;
-                    lifePointText.GetComponent<Text>().text = "LIFE：" + life;
-                    judgeText.GetComponent<Text>().text = "多い！";
-                    Invoke("clearJudgeText", 1.1f);
-                    soupAmount = 0;
-                    createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                    textRequest();
-                    createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
                 }
-                    Debug.Log(soupAmount);
+                else
+                {
+                    ServingOver();
+                    KeyUpAfterJudgeText();
+                }
+                Debug.Log(soupAmount);
                     break;
 
                 case 4:
@@ -245,38 +178,20 @@ public class PlayerScript : MonoBehaviour
                         {
                             if (soupAmount <= 3.0f && soupAmount >= 2.7f)
                             {
-                                score += 1;
-                            judgeText.GetComponent<Text>().text = "ナイス";
-                            Invoke("clearJudgeText", 1.1f);
-                            soupAmount = 0;
-                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                            textRequest();
-                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
+                            KeyUpSuccess();
+                            KeyUpAfterJudgeText();
                         }
                             else
                             {
-                                life -= 1;
-                            lifePointText.GetComponent<Text>().text = "LIFE：" + life;
-                            judgeText.GetComponent<Text>().text = "少な！";
-                            Invoke("clearJudgeText", 1.1f);
-                            soupAmount = 0;
-                            createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                            textRequest();
-                            createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
+                            KeyUpLuck();
+                            KeyUpAfterJudgeText();
                         }
                         }
                     }
                     else
                     {
-                        life -= 1;
-                    lifePointText.GetComponent<Text>().text = "LIFE：" + life;
-                    judgeText.GetComponent<Text>().text = "多い！";
-                    Invoke("clearJudgeText", 1.1f);
-
-                    soupAmount = 0;
-                    createrStudent.GetComponent<MoveStudentsScript>().kickOutStudent();
-                    textRequest();
-                    createrStudent.GetComponent<MoveStudentsScript>().createNewStudent();
+                    ServingOver();
+                    KeyUpAfterJudgeText();
                 }
                     Debug.Log(soupAmount);
                     break;
@@ -295,6 +210,36 @@ public class PlayerScript : MonoBehaviour
         sidedishRequestNumber = Random.Range(0, 5);
         requestText.GetComponent<Text>().text = "スープ" + amountRequestText[soupRequestNumber] + " おかず" + amountRequestText[sidedishRequestNumber];
   
+    }
+
+    void ServingOver()
+    {
+        life -= 1;
+        lifePointText.GetComponent<Text>().text = "LIFE：" + life;
+        judgeText.GetComponent<Text>().text = "多い！";
+    }
+
+    void KeyUpSuccess()
+    {
+        score += 1;
+        judgeText.GetComponent<Text>().text = "ナイス";
+    }
+
+    void KeyUpLuck()
+    {
+        life -= 1;
+        lifePointText.GetComponent<Text>().text = "LIFE：" + life;
+        judgeText.GetComponent<Text>().text = "少な！";
+    }
+
+    void KeyUpAfterJudgeText()
+    {
+        Invoke("clearJudgeText", 1.1f);
+        finishServing = true;
+        soupAmount = 0;
+        textRequest();
+        createrStudent.GetComponent<CreateStudentsScript>().createNewStudent();
+        beforeServing = true;
     }
 
     void goToEnding()

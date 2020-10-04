@@ -747,10 +747,8 @@ MonoBehaviour:
   scoreText: {fileID: 314137474}
   gameObjects: {fileID: 2135150697}
   gameUIs: {fileID: 64203020}
-  tooutStudent: {fileID: 2557610235491134134, guid: 01d95188be38e8143b91beadba9cf5aa,
-    type: 3}
-  toinStudent: {fileID: 2717114886933401109, guid: ade785b31a36aee4caa5b2a50c90a3e2,
-    type: 3}
+  tooutStudent: {fileID: 1673484434}
+  toinStudent: {fileID: 1673484434}
   createrStudent: {fileID: 1243916903}
   judgeText: {fileID: 5344607}
   lifePointText: {fileID: 102188021}
@@ -922,7 +920,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 951213596}
+      - m_Target: {fileID: 0}
         m_MethodName: restart
         m_Mode: 1
         m_Arguments:
@@ -1498,7 +1496,7 @@ PrefabInstance:
     - target: {fileID: 2557610235491134134, guid: 01d95188be38e8143b91beadba9cf5aa,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7360827141204932598, guid: 01d95188be38e8143b91beadba9cf5aa,
         type: 3}
@@ -1567,6 +1565,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01d95188be38e8143b91beadba9cf5aa, type: 3}
+--- !u!1 &1673484434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2557610235491134134, guid: 01d95188be38e8143b91beadba9cf5aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 1673484433}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1673484435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673484434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 782491aeffeb9417c80b13d966c46df8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
 --- !u!1 &1730534663
 GameObject:
   m_ObjectHideFlags: 0
