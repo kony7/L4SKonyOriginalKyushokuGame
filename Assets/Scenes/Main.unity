@@ -594,6 +594,10 @@ MonoBehaviour:
   scoreText: {fileID: 314137474}
   gameObjects: {fileID: 2135150697}
   gameUIs: {fileID: 64203020}
+  tooutStudent: {fileID: 2557610235491134134, guid: 01d95188be38e8143b91beadba9cf5aa,
+    type: 3}
+  toinStudent: {fileID: 2717114886933401109, guid: ade785b31a36aee4caa5b2a50c90a3e2,
+    type: 3}
 --- !u!4 &951213597
 Transform:
   m_ObjectHideFlags: 0

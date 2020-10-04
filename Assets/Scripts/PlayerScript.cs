@@ -24,6 +24,8 @@ public class PlayerScript : MonoBehaviour
     public GameObject scoreText;
     public GameObject gameObjects;
     public GameObject gameUIs;
+    public GameObject tooutStudent;
+    public GameObject toinStudent;
 
     // Start is called before the first frame update
     void Start()
@@ -49,19 +51,25 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 50.0f && soupAmount >= 47.0f)
                             {
                                 score += 1;
+                            kickoutStudent();
                             textRequest();
+                            createNewStudent();
                         }
                             else
                             {
                                 life -= 1;
+                            kickoutStudent();
                             textRequest();
+                            createNewStudent();
                         }
                         }
                     }
                     else if (soupAmount < 0.1f)
                     {
                         life -= 1;
+                    kickoutStudent();
                     textRequest();
+                    createNewStudent();
                 }
 
                     Debug.Log(soupAmount);
@@ -81,19 +89,25 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 40.0f && soupAmount >= 37.0f)
                             {
                                 score += 1;
+                            kickoutStudent();
                             textRequest();
+                            createNewStudent();
                         }
                             else
                             {
                                 life -= 1;
+                            kickoutStudent();
                             textRequest();
+                            createNewStudent();
                         }
                         }
                     }
                     else if (soupAmount < 0.1f)
                     {
                         life -= 1;
+                    kickoutStudent();
                     textRequest();
+                    createNewStudent();
                 }
                     Debug.Log(soupAmount);
                 break;
@@ -111,19 +125,25 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 30.0f && soupAmount >= 27.0f)
                             {
                                 score += 1;
+                            kickoutStudent();
                             textRequest();
+                            createNewStudent();
                         }
                             else
                             {
                                 life -= 1;
+                            kickoutStudent();
                             textRequest();
+                            createNewStudent();
                         }
                         }
                     }
                     else if (soupAmount < 0.1f)
                     {
                         life -= 1;
+                    kickoutStudent();
                     textRequest();
+                    createNewStudent();
                 }
                     Debug.Log(soupAmount);
                     break;
@@ -141,19 +161,25 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 20.0f && soupAmount >= 17.0f)
                             {
                                 score += 1;
+                            kickoutStudent();
                             textRequest();
+                            createNewStudent();
                         }
                             else
                             {
                                 life -= 1;
+                            kickoutStudent();
                             textRequest();
+                            createNewStudent();
                         }
                         }
                     }
                     else if (soupAmount < 0.1f)
                     {
                         life -= 1;
+                    kickoutStudent();
                     textRequest();
+                    createNewStudent();
                 }
                     Debug.Log(soupAmount);
                     break;
@@ -171,19 +197,25 @@ public class PlayerScript : MonoBehaviour
                             if (soupAmount <= 10.0f && soupAmount >= 5.0f)
                             {
                                 score += 1;
+                            kickoutStudent();
                             textRequest();
+                            createNewStudent();
                         }
                             else
                             {
                                 life -= 1;
+                            kickoutStudent();
                             textRequest();
+                            createNewStudent();
                         }
                         }
                     }
                     else if(soupAmount < 0.1f)
                     {
                         life -= 1;
+                    kickoutStudent();
                     textRequest();
+                    createNewStudent();
                 }
                     Debug.Log(soupAmount);
                     break;
@@ -205,6 +237,27 @@ public class PlayerScript : MonoBehaviour
         sidedishRequestNumber = Random.Range(0, 5);
         requestText.GetComponent<Text>().text = "スープ" + amountRequestText[soupRequestNumber] + " おかず" + amountRequestText[sidedishRequestNumber];
   
+    }
+
+    void kickoutStudent()
+    {
+        if (tooutStudent.transform.position.x > -6.5f)
+        {
+            tooutStudent.transform.position += new Vector3(0.5f, 0, 0);
+        }
+        else
+        {
+            Destroy(tooutStudent,0f);
+        }
+    }
+
+    void createNewStudent()
+    {
+        Instantiate(toinStudent, new Vector3(5.3f, -18.042f, -38.0f), transform.rotation);
+        if(toinStudent.transform.position.x > 0)
+        {
+            toinStudent.transform.position -= new Vector3(0.5f, 0, 0);
+        }
     }
 
     public void restart()
