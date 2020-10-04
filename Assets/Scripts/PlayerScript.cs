@@ -30,14 +30,6 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(serving == false)
-        //{
-        //    textRequest();
-        //    serving = true;
-
-        //}
-        //else if(serving == true)
-        //{
             switch (soupRequestNumber)
             {
                 case 0:
@@ -54,20 +46,17 @@ public class PlayerScript : MonoBehaviour
                             {
                                 score += 1;
                             textRequest();
-                            //Invoke("servingFalse", 1.0f);
                         }
                             else
                             {
                                 life -= 1;
                             textRequest();
-                            //Invoke("servingFalse", 1.0f);
                         }
                         }
                     }
                     else if (soupAmount < 0.1f)
                     {
                         life -= 1;
-                    //Invoke("servingFalse", 1.0f);
                     textRequest();
                 }
 
@@ -103,8 +92,7 @@ public class PlayerScript : MonoBehaviour
                     textRequest();
                 }
                     Debug.Log(soupAmount);
-                    //Invoke("servingFalse", 1.0f);
-                    break;
+                break;
 
                 case 2:
                     if (soupAmount <= 35.5f)
@@ -134,7 +122,6 @@ public class PlayerScript : MonoBehaviour
                     textRequest();
                 }
                     Debug.Log(soupAmount);
-
                     break;
 
                 case 3:
@@ -165,7 +152,6 @@ public class PlayerScript : MonoBehaviour
                     textRequest();
                 }
                     Debug.Log(soupAmount);
-
                     break;
 
                 case 4:
@@ -196,18 +182,16 @@ public class PlayerScript : MonoBehaviour
                     textRequest();
                 }
                     Debug.Log(soupAmount);
-
                     break;
-
             }
-        //}
+
+        if(life == 0)
+        {
+           
+        }
     }
 
-    void servingFalse()
-    {
-        serving = false;
-    }
-
+   
     void textRequest()
     {
         soupRequestNumber = Random.Range(0, 5);

@@ -17,12 +17,15 @@ public class StartScript : MonoBehaviour
     {
         intHighScore = PlayerPrefs.GetInt("HIGHSCORE", 0);
         stringHighScore = intHighScore.ToString();
+        Debug.Log(intHighScore + "は数字");
+        Debug.Log(stringHighScore + "は文字");
+        highScoreText.GetComponent<Text>().text = stringHighScore;
     }
 
     // Update is called once per frame
     void Update()
     {
-        highScoreText.GetComponent<Text>().text = stringHighScore;
+       
     }
 
     public void start()
