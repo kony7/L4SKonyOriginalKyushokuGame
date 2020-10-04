@@ -28,6 +28,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject toinStudent;
     public GameObject createrStudent;
     public GameObject judgeText;
+    public GameObject lifePointText;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +64,7 @@ public class PlayerScript : MonoBehaviour
                             else
                             {
                                 life -= 1;
+                            lifePointText.GetComponent<Text>().text = "LIFE：" + life;
                             judgeText.GetComponent<Text>().text = "少な！";
                             Invoke("clearJudgeText", 1.1f);
                             soupAmount = 0;
@@ -75,6 +77,7 @@ public class PlayerScript : MonoBehaviour
                     else
                     {
                         life -= 1;
+                    lifePointText.GetComponent<Text>().text = "LIFE：" + life;
                     judgeText.GetComponent<Text>().text = "多い！";
                     Invoke("clearJudgeText", 1.1f);
                     soupAmount = 0;
@@ -110,6 +113,7 @@ public class PlayerScript : MonoBehaviour
                             else
                             {
                                 life -= 1;
+                            lifePointText.GetComponent<Text>().text = "LIFE：" + life;
                             judgeText.GetComponent<Text>().text = "少な！";
                             Invoke("clearJudgeText", 1.1f);
                             soupAmount = 0;
@@ -122,6 +126,7 @@ public class PlayerScript : MonoBehaviour
                     else 
                     {
                         life -= 1;
+                    lifePointText.GetComponent<Text>().text = "LIFE：" + life;
                     judgeText.GetComponent<Text>().text = "多い！";
                     Invoke("clearJudgeText", 1.1f);
                     soupAmount = 0;
@@ -155,6 +160,7 @@ public class PlayerScript : MonoBehaviour
                             else
                             {
                                 life -= 1;
+                            lifePointText.GetComponent<Text>().text = "LIFE：" + life;
                             judgeText.GetComponent<Text>().text = "少な！";
                             Invoke("clearJudgeText", 1.1f);
                             soupAmount = 0;
@@ -167,6 +173,7 @@ public class PlayerScript : MonoBehaviour
                     else
                     {
                         life -= 1;
+                    lifePointText.GetComponent<Text>().text = "LIFE：" + life;
                     judgeText.GetComponent<Text>().text = "多い！";
                     Invoke("clearJudgeText", 1.1f);
                     soupAmount = 0;
@@ -200,6 +207,7 @@ public class PlayerScript : MonoBehaviour
                             else
                             {
                                 life -= 1;
+                            lifePointText.GetComponent<Text>().text = "LIFE：" + life;
                             judgeText.GetComponent<Text>().text = "少な！";
                             Invoke("clearJudgeText", 1.1f);
                             soupAmount = 0;
@@ -212,6 +220,7 @@ public class PlayerScript : MonoBehaviour
                     else
                     {
                         life -= 1;
+                    lifePointText.GetComponent<Text>().text = "LIFE：" + life;
                     judgeText.GetComponent<Text>().text = "多い！";
                     Invoke("clearJudgeText", 1.1f);
                     soupAmount = 0;
@@ -245,6 +254,7 @@ public class PlayerScript : MonoBehaviour
                             else
                             {
                                 life -= 1;
+                            lifePointText.GetComponent<Text>().text = "LIFE：" + life;
                             judgeText.GetComponent<Text>().text = "少な！";
                             Invoke("clearJudgeText", 1.1f);
                             soupAmount = 0;
@@ -257,6 +267,7 @@ public class PlayerScript : MonoBehaviour
                     else
                     {
                         life -= 1;
+                    lifePointText.GetComponent<Text>().text = "LIFE：" + life;
                     judgeText.GetComponent<Text>().text = "多い！";
                     Invoke("clearJudgeText", 1.1f);
 
