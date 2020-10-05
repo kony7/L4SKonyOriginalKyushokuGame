@@ -23,9 +23,10 @@ public class MoveStudentScript : MonoBehaviour
 
         if (beforeServingSignal == true)
         {
-            if (transform.position.x > 0.2f)
+            Debug.Log("今ビフォアがTrue");
+            if (transform.position.x > 0.4f)
             {
-                transform.position -= new Vector3(0.5f, 0f, 0f);
+                transform.position -= new Vector3(0.3f, 0f, 0f);
             }
             else
             {
@@ -34,17 +35,19 @@ public class MoveStudentScript : MonoBehaviour
         }
         else
         {
-
+            Debug.Log("今ビフォアがFalse");
         }
 
         if(finishServingSignal == true)
         {
+            Debug.Log("今フィニッシュがTrue");
             if (transform.position.x > -5.8f)
             {
-                transform.position -= new Vector3(0.5f, 0f, 0f);
+                transform.position -= new Vector3(0.3f, 0f, 0f);
             }
             else if(transform.position.x < -5.8f)
             {
+                playerScript.finishServing = false;
                 Destroy(this, 0f);
             }
             else
@@ -54,7 +57,7 @@ public class MoveStudentScript : MonoBehaviour
         }
         else
         {
-
+            Debug.Log("今フィニッシュがFalse");
         }
     }
 }

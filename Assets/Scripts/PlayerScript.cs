@@ -221,20 +221,20 @@ public class PlayerScript : MonoBehaviour
     {
         life -= 1;
         lifePointText.GetComponent<Text>().text = "LIFE：" + life;
-        judgeText.GetComponent<Text>().text = "多い！";
+        judgeText.GetComponent<Text>().text = "多い";
     }
 
     void KeyUpSuccess()
     {
         score += 1;
-        judgeText.GetComponent<Text>().text = "ナイス";
+        judgeText.GetComponent<Text>().text = "成功";
     }
 
     void KeyUpLuck()
     {
         life -= 1;
         lifePointText.GetComponent<Text>().text = "LIFE：" + life;
-        judgeText.GetComponent<Text>().text = "少な！";
+        judgeText.GetComponent<Text>().text = "少な";
     }
 
     void KeyUpAfterJudgeText()

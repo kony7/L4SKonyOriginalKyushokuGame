@@ -21,6 +21,6 @@ public class CreateStudentScript : MonoBehaviour
 
     public void createNewStudent()
     {
-        Instantiate(student, transform.position, transform.rotation);
+        Instantiate(student, transform.position, Quaternion.Euler(0, 180, 0));
     }
 }
