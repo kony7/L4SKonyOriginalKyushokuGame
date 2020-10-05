@@ -33,6 +33,9 @@ public class PlayerScript : MonoBehaviour
     public GameObject judgeText;
     public GameObject lifePointText;
 
+    public GameObject succeseAudio;
+    public GameObject unSucceseAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -221,12 +224,14 @@ public class PlayerScript : MonoBehaviour
     {
         life -= 1;
         lifePointText.GetComponent<Text>().text = "LIFE：" + life;
+        unSucceseAudio.GetComponent<AudioSource>().Play();
         judgeText.GetComponent<Text>().text = "多い";
     }
 
     void KeyUpSuccess()
     {
         score += 1;
+        succeseAudio.GetComponent<AudioSource>().Play();
         judgeText.GetComponent<Text>().text = "成功";
     }
 
@@ -234,6 +239,7 @@ public class PlayerScript : MonoBehaviour
     {
         life -= 1;
         lifePointText.GetComponent<Text>().text = "LIFE：" + life;
+        unSucceseAudio.GetComponent<AudioSource>().Play();
         judgeText.GetComponent<Text>().text = "少な";
     }
 
