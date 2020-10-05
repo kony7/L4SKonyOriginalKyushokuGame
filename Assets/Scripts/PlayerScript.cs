@@ -19,8 +19,8 @@ public class PlayerScript : MonoBehaviour
     string[] amountRequestText = new string[]{"大盛り","多め","普通","少なめ","少し" };
 
     //bool serving = false;
-    bool beforeServing = true;
-    bool finishServing = false;
+    public bool beforeServing = true;
+    public bool finishServing = false;
 
     public GameObject requestText;
     public GameObject ending;
