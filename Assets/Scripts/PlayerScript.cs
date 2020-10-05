@@ -22,7 +22,7 @@ public class PlayerScript : MonoBehaviour
     public bool beforeServing = true;
     public bool finishServing = false;
 
-    CreateStudentsScript createStudentsScript;
+    private CreateStudentScript createStudentScript;
 
     public GameObject requestText;
     public GameObject ending;
@@ -37,8 +37,8 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         createrStudent = GameObject.Find("CreaterStudent");
-        createStudentsScript = createrStudent.GetComponent<CreateStudentsScript>();
-        createStudentsScript.createNewStudent();
+        createStudentScript = createrStudent.GetComponent<CreateStudentScript>();
+        createStudentScript.createNewStudent();
         highScore = PlayerPrefs.GetInt("HIGHSCORE", 0);
     }
 
@@ -243,7 +243,7 @@ public class PlayerScript : MonoBehaviour
         finishServing = true;
         soupAmount = 0;
         textRequest();
-        createStudentsScript = createrStudent.GetComponent<CreateStudentsScript>();
+        createStudentScript.createNewStudent();
         beforeServing = true;
     }
 

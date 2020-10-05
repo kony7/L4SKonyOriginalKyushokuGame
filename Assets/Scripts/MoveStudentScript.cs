@@ -13,7 +13,6 @@ public class MoveStudentScript : MonoBehaviour
         gameManager = GameObject.Find("GameManager");
         playerScript = gameManager.GetComponent<PlayerScript>();
 
-        
     }
 
     // Update is called once per frame

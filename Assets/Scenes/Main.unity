@@ -742,13 +742,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d468d784828bf41dc89931805d071049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beforeServing: 1
+  finishServing: 0
   requestText: {fileID: 1203433459}
   ending: {fileID: 98620279}
   scoreText: {fileID: 314137474}
   gameObjects: {fileID: 2135150697}
   gameUIs: {fileID: 64203020}
-  tooutStudent: {fileID: 1673484434}
-  toinStudent: {fileID: 1673484434}
   createrStudent: {fileID: 1243916903}
   judgeText: {fileID: 5344607}
   lifePointText: {fileID: 102188021}
@@ -1583,7 +1583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 782491aeffeb9417c80b13d966c46df8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScript: {fileID: 0}
+  gameManager: {fileID: 951213595}
 --- !u!1 &1730534663
 GameObject:
   m_ObjectHideFlags: 0
