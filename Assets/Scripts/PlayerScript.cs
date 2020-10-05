@@ -22,6 +22,8 @@ public class PlayerScript : MonoBehaviour
     public bool beforeServing = true;
     public bool finishServing = false;
 
+    CreateStudentsScript createStudentsScript;
+
     public GameObject requestText;
     public GameObject ending;
     public GameObject scoreText;
@@ -34,14 +36,17 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        createrStudent.GetComponent<CreateStudentsScript>().createNewStudent();
+        createrStudent = GameObject.Find("CreaterStudent");
+        createStudentsScript = createrStudent.GetComponent<CreateStudentsScript>();
+        createStudentsScript.createNewStudent();
         highScore = PlayerPrefs.GetInt("HIGHSCORE", 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-            switch (soupRequestNumber)
+        createrStudent = GameObject.Find("CreaterStudent");
+        switch (soupRequestNumber)
             {
                 case 0:
                     if (soupAmount <= 18.5f)
@@ -238,7 +243,7 @@ public class PlayerScript : MonoBehaviour
         finishServing = true;
         soupAmount = 0;
         textRequest();
-        createrStudent.GetComponent<CreateStudentsScript>().createNewStudent();
+        createStudentsScript = createrStudent.GetComponent<CreateStudentsScript>();
         beforeServing = true;
     }
 
