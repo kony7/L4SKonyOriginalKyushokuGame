@@ -49,7 +49,7 @@ public class PlayerScript : MonoBehaviour
         switch (soupRequestNumber)
             {
                 case 0:
-                    if (soupAmount <= 18.5f)
+                    if (soupAmount <= 7.5f)
                     {
                         if (Input.GetKey(KeyCode.Space))
                         {
@@ -60,7 +60,7 @@ public class PlayerScript : MonoBehaviour
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
                         finishServing = true;
-                        if (soupAmount <= 18.0f && soupAmount >= 17.7f)
+                        if (soupAmount <= 7.0f && soupAmount >= 6.7f)
                         {
                             KeyUpSuccess();
                             KeyUpAfterJudgeText();
@@ -82,7 +82,7 @@ public class PlayerScript : MonoBehaviour
 
 
                 case 1:
-                    if (soupAmount <= 15.5f)
+                    if (soupAmount <= 5.5f)
                     {
                         if (Input.GetKey(KeyCode.Space))
                         {
@@ -91,7 +91,7 @@ public class PlayerScript : MonoBehaviour
 
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
-                            if (soupAmount <= 15.0f && soupAmount >= 14.7f)
+                            if (soupAmount <= 5.0f && soupAmount >= 4.7f)
                         {
                             KeyUpSuccess();
                             KeyUpAfterJudgeText();
@@ -112,7 +112,7 @@ public class PlayerScript : MonoBehaviour
                 break;
 
                 case 2:
-                    if (soupAmount <= 10.5f)
+                    if (soupAmount <= 3.5f)
                     {
                         if (Input.GetKey(KeyCode.Space))
                         {
@@ -121,7 +121,7 @@ public class PlayerScript : MonoBehaviour
 
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
-                            if (soupAmount <= 10.0f && soupAmount >= 9.7f)
+                            if (soupAmount <= 3.0f && soupAmount >= 2.7f)
                         {
                             KeyUpSuccess();
                             KeyUpAfterJudgeText();
@@ -142,7 +142,7 @@ public class PlayerScript : MonoBehaviour
                     break;
 
                 case 3:
-                    if (soupAmount <= 6.5f)
+                    if (soupAmount <= 2.5f)
                     {
                         if (Input.GetKey(KeyCode.Space))
                         {
@@ -151,7 +151,7 @@ public class PlayerScript : MonoBehaviour
 
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
-                            if (soupAmount <= 6.0f && soupAmount >= 5.7f)
+                            if (soupAmount <= 2.0f && soupAmount >= 1.7f)
                         {
                             KeyUpSuccess();
                             KeyUpAfterJudgeText();
@@ -172,7 +172,7 @@ public class PlayerScript : MonoBehaviour
                     break;
 
                 case 4:
-                    if (soupAmount <= 3.5f)
+                    if (soupAmount <= 1.5f)
                     {
                         if (Input.GetKey(KeyCode.Space))
                         {
@@ -181,7 +181,7 @@ public class PlayerScript : MonoBehaviour
 
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
-                            if (soupAmount <= 3.0f && soupAmount >= 2.7f)
+                            if (soupAmount <= 1.0f && soupAmount >= 0.7f)
                             {
                             KeyUpSuccess();
                             KeyUpAfterJudgeText();
