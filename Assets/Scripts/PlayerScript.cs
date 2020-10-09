@@ -72,10 +72,55 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         createrStudent = GameObject.Find("CreaterStudent");
+
+        if(soupAmount == 0)
+        {
+            SoupPlatePlace();
+        }else if(soupAmount < 0.6)
+        {
+            SoupPlus02();
+        }
+        else if (soupAmount < 1.0)
+        {
+            SoupPlus03();
+        }
+        else if (soupAmount < 1.5)
+        {
+            SoupPlus04();
+        }
+        else if (soupAmount < 2.0)
+        {
+            SoupPlus05();
+        }
+        else if (soupAmount < 2.5)
+        {
+            SoupPlus06();
+        }
+        else if (soupAmount < 3.0)
+        {
+            SoupPlus07();
+        }
+        else if (soupAmount < 3.5)
+        {
+            SoupPlus08();
+        }
+        else if (soupAmount < 4.0)
+        {
+            SoupPlus09();
+        }
+        else if (soupAmount < 4.5)
+        {
+            SoupPlus10();
+        }
+        else if (soupAmount < 5.0)
+        {
+            SoupPlus11();
+        }
+
         switch (soupRequestNumber)
             {
                 case 0:
-                    if (soupAmount <= 7.5f)
+                    if (soupAmount < 5.0f)
                     {
                         if (Input.GetKey(KeyCode.Space))
                         {
@@ -86,7 +131,7 @@ public class PlayerScript : MonoBehaviour
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
                         finishServing = true;
-                        if (soupAmount <= 7.0f && soupAmount >= 6.7f)
+                        if (soupAmount <= 4.1f && soupAmount >= 4.4f)
                         {
                             KeyUpSuccess();
                             KeyUpAfterJudgeText();
@@ -108,7 +153,7 @@ public class PlayerScript : MonoBehaviour
 
 
                 case 1:
-                    if (soupAmount <= 5.5f)
+                    if (soupAmount < 4.0f)
                     {
                         if (Input.GetKey(KeyCode.Space))
                         {
@@ -117,7 +162,7 @@ public class PlayerScript : MonoBehaviour
 
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
-                            if (soupAmount <= 5.0f && soupAmount >= 4.7f)
+                            if (soupAmount <= 3.1f && soupAmount >= 3.4f)
                         {
                             KeyUpSuccess();
                             KeyUpAfterJudgeText();
@@ -138,7 +183,7 @@ public class PlayerScript : MonoBehaviour
                 break;
 
                 case 2:
-                    if (soupAmount <= 3.5f)
+                    if (soupAmount < 3.0f)
                     {
                         if (Input.GetKey(KeyCode.Space))
                         {
@@ -147,7 +192,7 @@ public class PlayerScript : MonoBehaviour
 
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
-                            if (soupAmount <= 3.0f && soupAmount >= 2.7f)
+                            if (soupAmount <= 2.1f && soupAmount >= 2.4f)
                         {
                             KeyUpSuccess();
                             KeyUpAfterJudgeText();
@@ -168,7 +213,7 @@ public class PlayerScript : MonoBehaviour
                     break;
 
                 case 3:
-                    if (soupAmount <= 2.5f)
+                    if (soupAmount < 2.0f)
                     {
                         if (Input.GetKey(KeyCode.Space))
                         {
@@ -177,7 +222,7 @@ public class PlayerScript : MonoBehaviour
 
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
-                            if (soupAmount <= 2.0f && soupAmount >= 1.7f)
+                            if (soupAmount <= 1.1f && soupAmount >= 1.4f)
                         {
                             KeyUpSuccess();
                             KeyUpAfterJudgeText();
@@ -198,7 +243,7 @@ public class PlayerScript : MonoBehaviour
                     break;
 
                 case 4:
-                    if (soupAmount <= 1.5f)
+                    if (soupAmount < 1.0f)
                     {
                         if (Input.GetKey(KeyCode.Space))
                         {
@@ -207,7 +252,7 @@ public class PlayerScript : MonoBehaviour
 
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
-                            if (soupAmount <= 1.0f && soupAmount >= 0.7f)
+                            if (soupAmount <= 0.1f && soupAmount >= 0.4f)
                             {
                             KeyUpSuccess();
                             KeyUpAfterJudgeText();
@@ -278,8 +323,169 @@ public class PlayerScript : MonoBehaviour
 
     void SoupPlatePlace()
     {
-       
+        soup02.SetActive(false);
+        soup03.SetActive(false);
+        soup04.SetActive(false);
+        soup05.SetActive(false);
+        soup06.SetActive(false);
+        soup07.SetActive(false);
+        soup08.SetActive(false);
+        soup09.SetActive(false);
+        soup10.SetActive(false);
+        soup11.SetActive(false);
+        soupPlate.SetActive(true);
     }
+
+    void SoupPlus02()
+    {
+        soup02.SetActive(true);
+        soup03.SetActive(false);
+        soup04.SetActive(false);
+        soup05.SetActive(false);
+        soup06.SetActive(false);
+        soup07.SetActive(false);
+        soup08.SetActive(false);
+        soup09.SetActive(false);
+        soup10.SetActive(false);
+        soup11.SetActive(false);
+        soupPlate.SetActive(false);
+    }
+
+    void SoupPlus03()
+    {
+        soup02.SetActive(false);
+        soup03.SetActive(true);
+        soup04.SetActive(false);
+        soup05.SetActive(false);
+        soup06.SetActive(false);
+        soup07.SetActive(false);
+        soup08.SetActive(false);
+        soup09.SetActive(false);
+        soup10.SetActive(false);
+        soup11.SetActive(false);
+        soupPlate.SetActive(false);
+    }
+
+    void SoupPlus04()
+    {
+        soup02.SetActive(false);
+        soup03.SetActive(false);
+        soup04.SetActive(true);
+        soup05.SetActive(false);
+        soup06.SetActive(false);
+        soup07.SetActive(false);
+        soup08.SetActive(false);
+        soup09.SetActive(false);
+        soup10.SetActive(false);
+        soup11.SetActive(false);
+        soupPlate.SetActive(false);
+    }
+
+    void SoupPlus05()
+    {
+        soup02.SetActive(false);
+        soup03.SetActive(false);
+        soup04.SetActive(false);
+        soup05.SetActive(true);
+        soup06.SetActive(false);
+        soup07.SetActive(false);
+        soup08.SetActive(false);
+        soup09.SetActive(false);
+        soup10.SetActive(false);
+        soup11.SetActive(false);
+        soupPlate.SetActive(false);
+    }
+
+    void SoupPlus06()
+    {
+        soup02.SetActive(false);
+        soup03.SetActive(false);
+        soup04.SetActive(false);
+        soup05.SetActive(false);
+        soup06.SetActive(true);
+        soup07.SetActive(false);
+        soup08.SetActive(false);
+        soup09.SetActive(false);
+        soup10.SetActive(false);
+        soup11.SetActive(false);
+        soupPlate.SetActive(false);
+    }
+
+    void SoupPlus07()
+    {
+        soup02.SetActive(false);
+        soup03.SetActive(false);
+        soup04.SetActive(false);
+        soup05.SetActive(false);
+        soup06.SetActive(false);
+        soup07.SetActive(true);
+        soup08.SetActive(false);
+        soup09.SetActive(false);
+        soup10.SetActive(false);
+        soup11.SetActive(false);
+        soupPlate.SetActive(false);
+    }
+
+    void SoupPlus08()
+    {
+        soup02.SetActive(false);
+        soup03.SetActive(false);
+        soup04.SetActive(false);
+        soup05.SetActive(false);
+        soup06.SetActive(false);
+        soup07.SetActive(false);
+        soup08.SetActive(true);
+        soup09.SetActive(false);
+        soup10.SetActive(false);
+        soup11.SetActive(false);
+        soupPlate.SetActive(false);
+    }
+
+    void SoupPlus09()
+    {
+        soup02.SetActive(false);
+        soup03.SetActive(false);
+        soup04.SetActive(false);
+        soup05.SetActive(false);
+        soup06.SetActive(false);
+        soup07.SetActive(false);
+        soup08.SetActive(false);
+        soup09.SetActive(true);
+        soup10.SetActive(false);
+        soup11.SetActive(false);
+        soupPlate.SetActive(false);
+    }
+
+    void SoupPlus10()
+    {
+        soup02.SetActive(false);
+        soup03.SetActive(false);
+        soup04.SetActive(false);
+        soup05.SetActive(false);
+        soup06.SetActive(false);
+        soup07.SetActive(false);
+        soup08.SetActive(false);
+        soup09.SetActive(false);
+        soup10.SetActive(true);
+        soup11.SetActive(false);
+        soupPlate.SetActive(false);
+    }
+
+    void SoupPlus11()
+    {
+        soup02.SetActive(false);
+        soup03.SetActive(false);
+        soup04.SetActive(false);
+        soup05.SetActive(false);
+        soup06.SetActive(false);
+        soup07.SetActive(false);
+        soup08.SetActive(false);
+        soup09.SetActive(false);
+        soup10.SetActive(false);
+        soup11.SetActive(true);
+        soupPlate.SetActive(false);
+    }
+
 
     void goToEnding()
     {
