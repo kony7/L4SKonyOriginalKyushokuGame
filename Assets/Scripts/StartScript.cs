@@ -16,16 +16,17 @@ public class StartScript : MonoBehaviour
     {
         intHighScore = PlayerPrefs.GetInt("HIGHSCORE", 0);
         highScoreText.GetComponent<Text>().text = intHighScore.ToString();
+
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("Main");
+        }
     }
 
-    public void start()
-    {
-        SceneManager.LoadScene("Main");
-    }
 }
