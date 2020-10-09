@@ -117,6 +117,62 @@ public class PlayerScript : MonoBehaviour
             SoupPlus11();
         }
 
+        if(sidedishAmount == 0)
+        {
+            SideDishPlatePlace();
+        }
+        else if(sidedishAmount == 1)
+        {
+            SideDishPlus02();
+        }
+        else if (sidedishAmount == 2)
+        {
+            SideDishPlus03();
+        }
+        else if (sidedishAmount == 3)
+        {
+            SideDishPlus04();
+        }
+        else if (sidedishAmount == 4)
+        {
+            SideDishPlus05();
+        }
+        else if (sidedishAmount == 5)
+        {
+            SideDishPlus06();
+        }
+        else if (sidedishAmount == 6)
+        {
+            SideDishPlus07();
+        }
+        else if (sidedishAmount == 7)
+        {
+            SideDishPlus08();
+        }
+        else if (sidedishAmount == 8)
+        {
+            SideDishPlus09();
+        }
+        else if (sidedishAmount == 9)
+        {
+            SideDishPlus10();
+        }
+
+        
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+            if (sidedishAmount < 10)
+            {
+                sidedishAmount += 1;
+            }
+            else
+            {
+
+            }
+            }
+
+        
+
         switch (soupRequestNumber)
             {
                 case 0:
@@ -319,6 +375,146 @@ public class PlayerScript : MonoBehaviour
         textRequest();
         createStudentScript.createNewStudent();
         beforeServing = true;
+    }
+
+    void SideDishPlatePlace()
+    {
+        sidedishBowl.SetActive(true);
+        sidedish02.SetActive(false);
+        sidedish03.SetActive(false);
+        sidedish04.SetActive(false);
+        sidedish05.SetActive(false);
+        sidedish06.SetActive(false);
+        sidedish07.SetActive(false);
+        sidedish08.SetActive(false);
+        sidedish09.SetActive(false);
+        sidedish10.SetActive(false);
+    }
+
+    void SideDishPlus02()
+    {
+        sidedishBowl.SetActive(false);
+        sidedish02.SetActive(true);
+        sidedish03.SetActive(false);
+        sidedish04.SetActive(false);
+        sidedish05.SetActive(false);
+        sidedish06.SetActive(false);
+        sidedish07.SetActive(false);
+        sidedish08.SetActive(false);
+        sidedish09.SetActive(false);
+        sidedish10.SetActive(false);
+    }
+
+    void SideDishPlus03()
+    {
+        sidedishBowl.SetActive(false);
+        sidedish02.SetActive(false);
+        sidedish03.SetActive(true);
+        sidedish04.SetActive(false);
+        sidedish05.SetActive(false);
+        sidedish06.SetActive(false);
+        sidedish07.SetActive(false);
+        sidedish08.SetActive(false);
+        sidedish09.SetActive(false);
+        sidedish10.SetActive(false);
+    }
+
+    void SideDishPlus04()
+    {
+        sidedishBowl.SetActive(false);
+        sidedish02.SetActive(false);
+        sidedish03.SetActive(false);
+        sidedish04.SetActive(true);
+        sidedish05.SetActive(false);
+        sidedish06.SetActive(false);
+        sidedish07.SetActive(false);
+        sidedish08.SetActive(false);
+        sidedish09.SetActive(false);
+        sidedish10.SetActive(false);
+    }
+
+    void SideDishPlus05()
+    {
+        sidedishBowl.SetActive(false);
+        sidedish02.SetActive(false);
+        sidedish03.SetActive(false);
+        sidedish04.SetActive(false);
+        sidedish05.SetActive(true);
+        sidedish06.SetActive(false);
+        sidedish07.SetActive(false);
+        sidedish08.SetActive(false);
+        sidedish09.SetActive(false);
+        sidedish10.SetActive(false);
+    }
+
+    void SideDishPlus06()
+    {
+        sidedishBowl.SetActive(false);
+        sidedish02.SetActive(false);
+        sidedish03.SetActive(false);
+        sidedish04.SetActive(false);
+        sidedish05.SetActive(false);
+        sidedish06.SetActive(true);
+        sidedish07.SetActive(false);
+        sidedish08.SetActive(false);
+        sidedish09.SetActive(false);
+        sidedish10.SetActive(false);
+    }
+
+    void SideDishPlus07()
+    {
+        sidedishBowl.SetActive(false);
+        sidedish02.SetActive(false);
+        sidedish03.SetActive(false);
+        sidedish04.SetActive(false);
+        sidedish05.SetActive(false);
+        sidedish06.SetActive(false);
+        sidedish07.SetActive(true);
+        sidedish08.SetActive(false);
+        sidedish09.SetActive(false);
+        sidedish10.SetActive(false);
+    }
+
+    void SideDishPlus08()
+    {
+        sidedishBowl.SetActive(false);
+        sidedish02.SetActive(false);
+        sidedish03.SetActive(false);
+        sidedish04.SetActive(false);
+        sidedish05.SetActive(false);
+        sidedish06.SetActive(false);
+        sidedish07.SetActive(false);
+        sidedish08.SetActive(true);
+        sidedish09.SetActive(false);
+        sidedish10.SetActive(false);
+    }
+
+    void SideDishPlus09()
+    {
+        sidedishBowl.SetActive(false);
+        sidedish02.SetActive(false);
+        sidedish03.SetActive(false);
+        sidedish04.SetActive(false);
+        sidedish05.SetActive(false);
+        sidedish06.SetActive(false);
+        sidedish07.SetActive(false);
+        sidedish08.SetActive(false);
+        sidedish09.SetActive(true);
+        sidedish10.SetActive(false);
+    }
+
+    void SideDishPlus10()
+    {
+        sidedishBowl.SetActive(false);
+        sidedish02.SetActive(false);
+        sidedish03.SetActive(false);
+        sidedish04.SetActive(false);
+        sidedish05.SetActive(false);
+        sidedish06.SetActive(false);
+        sidedish07.SetActive(false);
+        sidedish08.SetActive(false);
+        sidedish09.SetActive(false);
+        sidedish10.SetActive(true);
     }
 
     void SoupPlatePlace()
