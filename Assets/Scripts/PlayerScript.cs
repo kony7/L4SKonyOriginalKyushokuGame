@@ -36,6 +36,29 @@ public class PlayerScript : MonoBehaviour
     public GameObject succeseAudio;
     public GameObject unSucceseAudio;
 
+    public GameObject soupPlate;
+    public GameObject soup02;
+    public GameObject soup03;
+    public GameObject soup04;
+    public GameObject soup05;
+    public GameObject soup06;
+    public GameObject soup07;
+    public GameObject soup08;
+    public GameObject soup09;
+    public GameObject soup10;
+    public GameObject soup11;
+
+    public GameObject sidedishBowl;
+    public GameObject sidedish02;
+    public GameObject sidedish03;
+    public GameObject sidedish04;
+    public GameObject sidedish05;
+    public GameObject sidedish06;
+    public GameObject sidedish07;
+    public GameObject sidedish08;
+    public GameObject sidedish09;
+    public GameObject sidedish10;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -251,6 +274,11 @@ public class PlayerScript : MonoBehaviour
         textRequest();
         createStudentScript.createNewStudent();
         beforeServing = true;
+    }
+
+    void SoupPlatePlace()
+    {
+       
     }
 
     void goToEnding()

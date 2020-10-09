@@ -844,6 +844,38 @@ MonoBehaviour:
   lifePointText: {fileID: 102188021}
   succeseAudio: {fileID: 1621401352}
   unSucceseAudio: {fileID: 1667085629}
+  soupPlate: {fileID: 5017979827306943483, guid: 645af07d24bee4333b538be1a563892e,
+    type: 3}
+  soup02: {fileID: 6289753390606591385, guid: 9f307ad1858244b288169896086fea1a, type: 3}
+  soup03: {fileID: 1915445122996211596, guid: 0068911f79a93430cbf29c0079168db9, type: 3}
+  soup04: {fileID: 2113827142124146022, guid: ffd0a66a5745441279aa307201ac8dd5, type: 3}
+  soup05: {fileID: 8960363474607096926, guid: 528703d11dd044eaaab7bd3640770c53, type: 3}
+  soup06: {fileID: 5803707981009559516, guid: f353ebf5deb0d46e9a6ba3a1847e6341, type: 3}
+  soup07: {fileID: 905837278019743545, guid: ca7f143a48e2249119448ab3f8ef4192, type: 3}
+  soup08: {fileID: 8283602358892536853, guid: 09fa8b30edb9943be9fc1d0eecacebec, type: 3}
+  soup09: {fileID: 9198108025266411373, guid: 3ff900be4e0ae4ec1b9a55cf0cbd72a1, type: 3}
+  soup10: {fileID: 5165774118877654583, guid: c54c01dd6c0664c5b9dded3bec143cdd, type: 3}
+  soup11: {fileID: 2626503248846480533, guid: 388e7c3a84e6f437ea7bc34e4dbad6d0, type: 3}
+  sidedishBowl: {fileID: 5530125887011025431, guid: dd3a80c0ddbab49008877b086e3974d1,
+    type: 3}
+  sidedish02: {fileID: 271731820545968741, guid: 7905bcae7f65b4035bde1f1ce210698d,
+    type: 3}
+  sidedish03: {fileID: 721029095178068357, guid: f3de577b5827043ef9beeb24eaa9eb61,
+    type: 3}
+  sidedish04: {fileID: 3976197073962992094, guid: 9cbd924a6aaae420ea44cb981087266d,
+    type: 3}
+  sidedish05: {fileID: 6966653837467516093, guid: 96e151d1f26b44aed81e4cd142a89d0e,
+    type: 3}
+  sidedish06: {fileID: 7314769908773825042, guid: 390f33902e0434960a9368cf80e8ffe5,
+    type: 3}
+  sidedish07: {fileID: 4177036918101884271, guid: 150fdc0eefca043ffa22735ce8b41b7f,
+    type: 3}
+  sidedish08: {fileID: 6113119519277087383, guid: 6d173f9d1d73a41f1afc06e6e061ea48,
+    type: 3}
+  sidedish09: {fileID: 7676104715842926422, guid: 1cfaa7248a10948fe86c8372421a2fef,
+    type: 3}
+  sidedish10: {fileID: 7351053219349551600, guid: 306b8a156fb5c427194e0c7dd3943dda,
+    type: 3}
 --- !u!4 &951213597
 Transform:
   m_ObjectHideFlags: 0
