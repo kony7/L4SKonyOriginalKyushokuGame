@@ -30,7 +30,8 @@ public class PlayerScript : MonoBehaviour
     public GameObject gameObjects;
     public GameObject gameUIs;
     public GameObject createrStudent;
-    public GameObject judgeText;
+    public GameObject judgeTextsoup;
+    public GameObject judgeTextsidedish;
     public GameObject lifePointText;
 
     public GameObject succeseAudio;
@@ -157,21 +158,125 @@ public class PlayerScript : MonoBehaviour
         {
             SideDishPlus10();
         }
-
         
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-            if (sidedishAmount < 10)
-            {
-                sidedishAmount += 1;
-            }
-            else
-            {
 
-            }
-            }
+        switch (sidedishRequestNumber)
+        {
+            case 0:
+                if(sidedishAmount < 10)
+                {
+                    if (Input.GetKeyDown(KeyCode.UpArrow))
+                    {
+                        sidedishAmount += 1;
+                    }
 
-        
+                    if (sidedishAmount == 9)
+                    {
+                        KeyUpSuccess(false);
+                    }
+                    else
+                    {
+                      
+                    }
+                }
+                else
+                {
+                    ServingOver(false);
+                }
+                break;
+
+            case 1:
+                if (sidedishAmount < 8)
+                {
+                    if (Input.GetKeyDown(KeyCode.UpArrow))
+                    {
+                        sidedishAmount += 1;
+                    }
+
+                    if (sidedishAmount == 7)
+                    {
+                        KeyUpSuccess(false);
+                    }
+                    else 
+                    {
+                       
+                    }
+                }
+                else
+                {
+                    ServingOver(false);
+                }
+                break;
+
+            case 2:
+                if (sidedishAmount < 6)
+                {
+                    if (Input.GetKeyDown(KeyCode.UpArrow))
+                    {
+                        sidedishAmount += 1;
+                    }
+
+                    if (sidedishAmount == 5)
+                    {
+                        KeyUpSuccess(false);
+                    }
+                    else
+                    {
+                       
+                    }
+                }
+                else
+                {
+                    ServingOver(false);
+                }
+                break;
+
+            case 3:
+                if (sidedishAmount < 4)
+                {
+                    if (Input.GetKeyDown(KeyCode.UpArrow))
+                    {
+                        sidedishAmount += 1;
+                    }
+
+                    if (sidedishAmount == 3)
+                    {
+                        KeyUpSuccess(false);
+                    }
+                    else 
+                    {
+                      
+                    }
+                }
+                else
+                {
+                    ServingOver(false);
+                }
+                break;
+
+            case 4:
+                if (sidedishAmount < 2)
+                {
+                    if (Input.GetKeyDown(KeyCode.UpArrow))
+                    {
+                        sidedishAmount += 1;
+                    }
+
+                    if (sidedishAmount == 1)
+                    {
+                        KeyUpSuccess(false);
+                    }
+                    else 
+                    {
+                      
+                    }
+                }
+                else
+                {
+                    ServingOver(false);
+                }
+                break;
+        }
 
         switch (soupRequestNumber)
             {
@@ -189,19 +294,19 @@ public class PlayerScript : MonoBehaviour
                         finishServing = true;
                         if (soupAmount <= 4.1f && soupAmount >= 4.4f)
                         {
-                            KeyUpSuccess();
+                            KeyUpSuccess(true);
                             KeyUpAfterJudgeText();
                         }
                         else
                         {
-                            KeyUpLuck();
+                            KeyUpLuck(true);
                             KeyUpAfterJudgeText();
                         }
                     }
                 }
                 else
                 {
-                    ServingOver();
+                    ServingOver(true);
                     KeyUpAfterJudgeText();
                 }
                 Debug.Log(soupAmount);
@@ -220,19 +325,19 @@ public class PlayerScript : MonoBehaviour
                         {
                             if (soupAmount <= 3.1f && soupAmount >= 3.4f)
                         {
-                            KeyUpSuccess();
+                            KeyUpSuccess(true);
                             KeyUpAfterJudgeText();
                         }
                         else
                         {
-                            KeyUpLuck();
+                            KeyUpLuck(true);
                             KeyUpAfterJudgeText();
                         }
                     }
                 }
                 else
                 {
-                    ServingOver();
+                    ServingOver(true);
                     KeyUpAfterJudgeText();
                 }
                 Debug.Log(soupAmount);
@@ -250,19 +355,19 @@ public class PlayerScript : MonoBehaviour
                         {
                             if (soupAmount <= 2.1f && soupAmount >= 2.4f)
                         {
-                            KeyUpSuccess();
+                            KeyUpSuccess(true);
                             KeyUpAfterJudgeText();
                         }
                         else
                         {
-                            KeyUpLuck();
+                            KeyUpLuck(true);
                             KeyUpAfterJudgeText();
                         }
                     }
                 }
                 else
                 {
-                    ServingOver();
+                    ServingOver(true);
                     KeyUpAfterJudgeText();
                 }
                 Debug.Log(soupAmount);
@@ -280,19 +385,19 @@ public class PlayerScript : MonoBehaviour
                         {
                             if (soupAmount <= 1.1f && soupAmount >= 1.4f)
                         {
-                            KeyUpSuccess();
+                            KeyUpSuccess(true);
                             KeyUpAfterJudgeText();
                         }
                         else
                         {
-                            KeyUpLuck();
+                            KeyUpLuck(true);
                             KeyUpAfterJudgeText();
                         }
                     }
                 }
                 else
                 {
-                    ServingOver();
+                    ServingOver(true);
                     KeyUpAfterJudgeText();
                 }
                 Debug.Log(soupAmount);
@@ -310,19 +415,19 @@ public class PlayerScript : MonoBehaviour
                         {
                             if (soupAmount <= 0.1f && soupAmount >= 0.4f)
                             {
-                            KeyUpSuccess();
+                            KeyUpSuccess(true);
                             KeyUpAfterJudgeText();
                         }
                             else
                             {
-                            KeyUpLuck();
+                            KeyUpLuck(true);
                             KeyUpAfterJudgeText();
                         }
                         }
                     }
                     else
                     {
-                    ServingOver();
+                    ServingOver(true);
                     KeyUpAfterJudgeText();
                 }
                     Debug.Log(soupAmount);
@@ -344,27 +449,51 @@ public class PlayerScript : MonoBehaviour
   
     }
 
-    void ServingOver()
+    void ServingOver(bool souptrue)
     {
         life -= 1;
         lifePointText.GetComponent<Text>().text = "LIFE：" + life;
         unSucceseAudio.GetComponent<AudioSource>().Play();
-        judgeText.GetComponent<Text>().text = "多い";
+
+        if (souptrue == true)
+        {
+            judgeTextsoup.GetComponent<Text>().text = "多い";
+        }
+        else
+        {
+            judgeTextsidedish.GetComponent<Text>().text = "多い";
+        }
     }
 
-    void KeyUpSuccess()
+    void KeyUpSuccess(bool souptrue)
     {
         score += 1;
         succeseAudio.GetComponent<AudioSource>().Play();
-        judgeText.GetComponent<Text>().text = "成功";
+
+        if (souptrue == true)
+        {
+            judgeTextsoup.GetComponent<Text>().text = "成功";
+        }
+        else
+        {
+            judgeTextsidedish.GetComponent<Text>().text = "成功";
+        }
     }
 
-    void KeyUpLuck()
+    void KeyUpLuck(bool souptrue)
     {
         life -= 1;
         lifePointText.GetComponent<Text>().text = "LIFE：" + life;
         unSucceseAudio.GetComponent<AudioSource>().Play();
-        judgeText.GetComponent<Text>().text = "少な";
+
+        if (souptrue == true)
+        {
+            judgeTextsoup.GetComponent<Text>().text = "少な";
+        }
+        else
+        {
+            judgeTextsidedish.GetComponent<Text>().text = "少な";
+        }
     }
 
     void KeyUpAfterJudgeText()
@@ -372,6 +501,7 @@ public class PlayerScript : MonoBehaviour
         Invoke("clearJudgeText", 1.1f);
         finishServing = true;
         soupAmount = 0;
+        sidedishAmount = 0;
         textRequest();
         createStudentScript.createNewStudent();
         beforeServing = true;
@@ -708,6 +838,7 @@ public class PlayerScript : MonoBehaviour
 
     void clearJudgeText()
     {
-        judgeText.GetComponent<Text>().text = " ";
+        judgeTextsoup.GetComponent<Text>().text = " ";
+        judgeTextsidedish.GetComponent<Text>().text = " ";
     }
 }
