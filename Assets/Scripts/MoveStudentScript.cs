@@ -48,7 +48,7 @@ public class MoveStudentScript : MonoBehaviour
             else if(transform.position.x < -5.8f)
             {
                 playerScript.finishServing = false;
-                Destroy(this, 0f);
+                Destroy(this.gameObject, 0f);
             }
             else
             {
