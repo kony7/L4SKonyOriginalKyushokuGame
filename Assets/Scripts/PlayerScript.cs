@@ -16,7 +16,6 @@ public class PlayerScript : MonoBehaviour
     float soupAmount;
     float sidedishAmount;
 
-    bool oneTimeScorePlus;
 
     string[] amountRequestText = new string[]{"大盛り","多め","普通","少なめ","少し" };
 
@@ -29,7 +28,6 @@ public class PlayerScript : MonoBehaviour
     public GameObject requestText;
     public GameObject ending;
     public GameObject scoreText;
-    public GameObject gameObjects;
     public GameObject gameUIs;
     public GameObject createrStudent;
     public GameObject judgeTextsoup;
@@ -499,7 +497,6 @@ public class PlayerScript : MonoBehaviour
 
     void KeyUpSuccess(bool souptrue)
     {
-        oneTimeScorePlus = true;
 
         score += 1;
         succeseAudio.GetComponent<AudioSource>().Play();
@@ -850,10 +847,10 @@ public class PlayerScript : MonoBehaviour
 
     void goToEnding()
     {
-        gameObjects.SetActive(false);
         gameUIs.SetActive(false);
         scoreText.GetComponent<Text>().text = score.ToString();
         ending.SetActive(true);
+        
 
         if (score > highScore)
         {
