@@ -467,8 +467,20 @@ public class PlayerScript : MonoBehaviour
 
     void KeyUpSuccess(bool souptrue)
     {
-        score += 1;
-        succeseAudio.GetComponent<AudioSource>().Play();
+        bool oneTimeScorePlus = true;
+
+        if (oneTimeScorePlus == true)
+        {
+            score += 1;
+            succeseAudio.GetComponent<AudioSource>().Play();
+            oneTimeScorePlus = false;
+        }
+        else
+        {
+
+        }
+
+        
 
         if (souptrue == true)
         {
