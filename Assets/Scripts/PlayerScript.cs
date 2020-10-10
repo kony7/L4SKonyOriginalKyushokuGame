@@ -466,7 +466,7 @@ public class PlayerScript : MonoBehaviour
 
         if(life == 0)
         {
-            Invoke("goToEnding", 1.2f);
+            Invoke("goToEnding", 0.6f);
         }
     }
 
@@ -535,7 +535,14 @@ public class PlayerScript : MonoBehaviour
         soupAmount = 0;
         sidedishAmount = 0;
         textRequest();
-        createStudentScript.createNewStudent();
+        if (life > 0)
+        {
+            createStudentScript.createNewStudent();
+        }
+        else
+        {
+
+        }
         beforeServing = true;
     }
 
