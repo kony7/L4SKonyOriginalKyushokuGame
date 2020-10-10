@@ -16,6 +16,8 @@ public class PlayerScript : MonoBehaviour
     float soupAmount;
     float sidedishAmount;
 
+    bool oneTimeScorePlus;
+
     string[] amountRequestText = new string[]{"大盛り","多め","普通","少なめ","少し" };
 
     //bool serving = false;
@@ -170,18 +172,25 @@ public class PlayerScript : MonoBehaviour
                         sidedishAmount += 1;
                     }
 
-                    if (sidedishAmount == 9)
+                    if (Input.GetKeyUp(KeyCode.Space))
                     {
-                        KeyUpSuccess(false);
+                        if (sidedishAmount == 9)
+                        {
+                            KeyUpSuccess(false);
+                        }
+                        else
+                        {
+                            
+                        }
                     }
-                    else
-                    {
-                      
-                    }
+                   
                 }
                 else
                 {
-                    ServingOver(false);
+                    if (Input.GetKeyUp(KeyCode.Space))
+                    {
+                        ServingOver(false);
+                    }
                 }
                 break;
 
@@ -192,19 +201,24 @@ public class PlayerScript : MonoBehaviour
                     {
                         sidedishAmount += 1;
                     }
+                    if (Input.GetKeyUp(KeyCode.Space))
+                    {
+                        if (sidedishAmount == 9)
+                        {
+                            KeyUpSuccess(false);
+                        }
+                        else
+                        {
 
-                    if (sidedishAmount == 7)
-                    {
-                        KeyUpSuccess(false);
-                    }
-                    else 
-                    {
-                       
+                        }
                     }
                 }
                 else
                 {
-                    ServingOver(false);
+                    if (Input.GetKeyUp(KeyCode.Space))
+                    {
+                        ServingOver(false);
+                    }
                 }
                 break;
 
@@ -216,18 +230,24 @@ public class PlayerScript : MonoBehaviour
                         sidedishAmount += 1;
                     }
 
-                    if (sidedishAmount == 5)
+                    if (Input.GetKeyUp(KeyCode.Space))
                     {
-                        KeyUpSuccess(false);
-                    }
-                    else
-                    {
-                       
+                        if (sidedishAmount == 9)
+                        {
+                            KeyUpSuccess(false);
+                        }
+                        else
+                        {
+
+                        }
                     }
                 }
                 else
                 {
-                    ServingOver(false);
+                    if (Input.GetKeyUp(KeyCode.Space))
+                    {
+                        ServingOver(false);
+                    }
                 }
                 break;
 
@@ -239,18 +259,24 @@ public class PlayerScript : MonoBehaviour
                         sidedishAmount += 1;
                     }
 
-                    if (sidedishAmount == 3)
+                    if (Input.GetKeyUp(KeyCode.Space))
                     {
-                        KeyUpSuccess(false);
-                    }
-                    else 
-                    {
-                      
+                        if (sidedishAmount == 9)
+                        {
+                            KeyUpSuccess(false);
+                        }
+                        else
+                        {
+
+                        }
                     }
                 }
                 else
                 {
-                    ServingOver(false);
+                    if (Input.GetKeyUp(KeyCode.Space))
+                    {
+                        ServingOver(false);
+                    }
                 }
                 break;
 
@@ -262,18 +288,24 @@ public class PlayerScript : MonoBehaviour
                         sidedishAmount += 1;
                     }
 
-                    if (sidedishAmount == 1)
+                    if (Input.GetKeyUp(KeyCode.Space))
                     {
-                        KeyUpSuccess(false);
-                    }
-                    else 
-                    {
-                      
+                        if (sidedishAmount == 9)
+                        {
+                            KeyUpSuccess(false);
+                        }
+                        else
+                        {
+
+                        }
                     }
                 }
                 else
                 {
-                    ServingOver(false);
+                    if (Input.GetKeyUp(KeyCode.Space))
+                    {
+                        ServingOver(false);
+                    }
                 }
                 break;
         }
@@ -467,21 +499,12 @@ public class PlayerScript : MonoBehaviour
 
     void KeyUpSuccess(bool souptrue)
     {
-        bool oneTimeScorePlus = true;
+        oneTimeScorePlus = true;
 
-        if (oneTimeScorePlus == true)
-        {
-            score += 1;
-            succeseAudio.GetComponent<AudioSource>().Play();
-            oneTimeScorePlus = false;
-        }
-        else
-        {
-
-        }
-
+        score += 1;
+        succeseAudio.GetComponent<AudioSource>().Play();
+         
         
-
         if (souptrue == true)
         {
             judgeTextsoup.GetComponent<Text>().text = "成功";
