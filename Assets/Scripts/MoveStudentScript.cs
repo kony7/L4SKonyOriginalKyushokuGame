@@ -25,7 +25,7 @@ public class MoveStudentScript : MonoBehaviour
         {
             if (transform.position.x > 0.4f)
             {
-                transform.position -= new Vector3(0.3f, 0f, 0f);
+                transform.position -= new Vector3(0.2f, 0f, 0f);
             }
             else
             {
@@ -34,11 +34,12 @@ public class MoveStudentScript : MonoBehaviour
         }
         else
         {
+
         }
 
         if(finishServingSignal == true)
         {
-            if (transform.position.x > -5.8f)
+            if (transform.position.x < 0.4f && transform.position.x > -5.8f)
             {
                 transform.position -= new Vector3(0.3f, 0f, 0f);
             }
@@ -54,6 +55,7 @@ public class MoveStudentScript : MonoBehaviour
         }
         else
         {
+
         }
     }
 }
