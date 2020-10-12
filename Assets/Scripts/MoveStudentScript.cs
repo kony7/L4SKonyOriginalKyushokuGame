@@ -20,6 +20,7 @@ public class MoveStudentScript : MonoBehaviour
     {
         bool beforeServingSignal = playerScript.beforeServing;
         bool finishServingSignal = playerScript.finishServing;
+        bool ending = playerScript.endding;
 
         if (beforeServingSignal == true)
         {
@@ -52,6 +53,15 @@ public class MoveStudentScript : MonoBehaviour
             {
 
             }
+        }
+        else
+        {
+
+        }
+
+        if(ending == true)
+        {
+            Destroy(this.gameObject, 0f);
         }
         else
         {

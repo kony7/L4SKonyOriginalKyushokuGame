@@ -22,6 +22,7 @@ public class PlayerScript : MonoBehaviour
     //bool serving = false;
     public bool beforeServing = true;
     public bool finishServing = false;
+    public bool endding = false;
 
     bool sidedishjudge;
 
@@ -889,6 +890,7 @@ public class PlayerScript : MonoBehaviour
 
     void goToEnding()
     {
+        endding = true;
         gameUIs.SetActive(false);
         scoreText.GetComponent<Text>().text = score.ToString();
         ending.SetActive(true);
