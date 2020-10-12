@@ -173,6 +173,11 @@ public class PlayerScript : MonoBehaviour
                         sidedishAmount += 1;
                     }
 
+                    if (Input.GetKeyDown(KeyCode.DownArrow))
+                    {
+                        sidedishAmount -= 1;
+                    }
+
                     if (Input.GetKeyUp(KeyCode.Space))
                     {
                         if (sidedishAmount == 9)
@@ -206,6 +211,12 @@ public class PlayerScript : MonoBehaviour
                     {
                         sidedishAmount += 1;
                     }
+
+                    if (Input.GetKeyDown(KeyCode.DownArrow))
+                    {
+                        sidedishAmount -= 1;
+                    }
+
                     if (Input.GetKeyUp(KeyCode.Space))
                     {
                         if (sidedishAmount == 7)
@@ -237,6 +248,11 @@ public class PlayerScript : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.UpArrow))
                     {
                         sidedishAmount += 1;
+                    }
+
+                    if (Input.GetKeyDown(KeyCode.DownArrow))
+                    {
+                        sidedishAmount -= 1;
                     }
 
                     if (Input.GetKeyUp(KeyCode.Space))
@@ -272,6 +288,11 @@ public class PlayerScript : MonoBehaviour
                         sidedishAmount += 1;
                     }
 
+                    if (Input.GetKeyDown(KeyCode.DownArrow))
+                    {
+                        sidedishAmount -= 1;
+                    }
+
                     if (Input.GetKeyUp(KeyCode.Space))
                     {
                         if (sidedishAmount == 3)
@@ -303,6 +324,11 @@ public class PlayerScript : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.UpArrow))
                     {
                         sidedishAmount += 1;
+                    }
+
+                    if (Input.GetKeyDown(KeyCode.DownArrow))
+                    {
+                        sidedishAmount -= 1;
                     }
 
                     if (Input.GetKeyUp(KeyCode.Space))
