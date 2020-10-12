@@ -23,6 +23,8 @@ public class PlayerScript : MonoBehaviour
     public bool beforeServing = true;
     public bool finishServing = false;
 
+    bool sidedishjudge;
+
     private CreateStudentScript createStudentScript;
 
     public GameObject requestText;
@@ -175,14 +177,17 @@ public class PlayerScript : MonoBehaviour
                         if (sidedishAmount == 9)
                         {
                             KeyUpSuccess(false);
+                            sidedishjudge = false;
                         }
                         else if(sidedishAmount < 9)
                         {
                             KeyUpLuck(false);
+                            sidedishjudge = true;
                         }
                         else
                         {
                             ServingOver(false);
+                            sidedishjudge = true;
                         }
                     }
                    
@@ -205,14 +210,17 @@ public class PlayerScript : MonoBehaviour
                         if (sidedishAmount == 7)
                         {
                             KeyUpSuccess(false);
+                            sidedishjudge = false;
                         }
                         else if(sidedishAmount < 7)
                         {
                             KeyUpLuck(false);
+                            sidedishjudge = true;
                         }
                         else
                         {
                             ServingOver(false);
+                            sidedishjudge = true;
                         }
                     }
                 }
@@ -235,14 +243,17 @@ public class PlayerScript : MonoBehaviour
                         if (sidedishAmount == 5)
                         {
                             KeyUpSuccess(false);
+                            sidedishjudge = false;
                         }
                         else if(sidedishAmount < 5)
                         {
                             KeyUpLuck(false);
+                            sidedishjudge = true;
                         }
                         else
                         {
                             ServingOver(false);
+                            sidedishjudge = true;
                         }
                     }
                 }
@@ -265,14 +276,17 @@ public class PlayerScript : MonoBehaviour
                         if (sidedishAmount == 3)
                         {
                             KeyUpSuccess(false);
+                            sidedishjudge = false;
                         }
                         else if(sidedishAmount < 3)
                         {
                             KeyUpLuck(false);
+                            sidedishjudge = true;
                         }
                         else
                         {
                             ServingOver(false);
+                            sidedishjudge = true;
                         }
                     }
                 }
@@ -295,14 +309,17 @@ public class PlayerScript : MonoBehaviour
                         if (sidedishAmount == 1)
                         {
                             KeyUpSuccess(false);
+                            sidedishjudge = false;
                         }
                         else if(sidedishAmount < 1)
                         {
                             KeyUpLuck(false);
+                            sidedishjudge = true;
                         }
                         else
                         {
                             ServingOver(false);
+                            sidedishjudge = true;
                         }
                     }
                 }
@@ -486,12 +503,20 @@ public class PlayerScript : MonoBehaviour
 
     void ServingOver(bool souptrue)
     {
-        life -= 1;
         lifePointText.GetComponent<Text>().text = "LIFE：" + life;
         unSucceseAudio.GetComponent<AudioSource>().Play();
 
         if (souptrue == true)
         {
+            if(sidedishjudge == true)
+            {
+                life -= 1;
+            }
+            else
+            {
+
+            }
+
             judgeTextsoup.GetComponent<Text>().text = "多い";
         }
         else
@@ -502,13 +527,14 @@ public class PlayerScript : MonoBehaviour
 
     void KeyUpSuccess(bool souptrue)
     {
-
-        score += 1;
         succeseAudio.GetComponent<AudioSource>().Play();
-         
         
         if (souptrue == true)
         {
+            if (sidedishjudge == false)
+            {
+                score += 1;
+            }
             judgeTextsoup.GetComponent<Text>().text = "成功";
         }
         else
@@ -519,12 +545,16 @@ public class PlayerScript : MonoBehaviour
 
     void KeyUpLuck(bool souptrue)
     {
-        life -= 1;
         lifePointText.GetComponent<Text>().text = "LIFE：" + life;
         unSucceseAudio.GetComponent<AudioSource>().Play();
 
         if (souptrue == true)
         {
+            if (sidedishjudge == true)
+            {
+                life -= 1;
+            }
+
             judgeTextsoup.GetComponent<Text>().text = "少な";
         }
         else
