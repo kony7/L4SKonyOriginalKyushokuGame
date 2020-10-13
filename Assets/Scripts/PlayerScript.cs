@@ -371,12 +371,12 @@ public class PlayerScript : MonoBehaviour
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
                         finishServing = true;
-                        if (soupAmount <= 4.1f && soupAmount >= 4.4f)
+                        if (soupAmount >= 4.1f && soupAmount <= 4.6f)
                         {
                             KeyUpSuccess(true);
                             KeyUpAfterJudgeText();
                         }
-                        else
+                        else if(soupAmount < 4.1f)
                         {
                             KeyUpLuck(true);
                             KeyUpAfterJudgeText();
@@ -402,12 +402,12 @@ public class PlayerScript : MonoBehaviour
 
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
-                            if (soupAmount <= 3.1f && soupAmount >= 3.4f)
+                         if (soupAmount >= 3.1f && soupAmount <= 3.6f)
                         {
                             KeyUpSuccess(true);
                             KeyUpAfterJudgeText();
                         }
-                        else
+                        else if (soupAmount < 3.1f)
                         {
                             KeyUpLuck(true);
                             KeyUpAfterJudgeText();
@@ -432,12 +432,12 @@ public class PlayerScript : MonoBehaviour
 
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
-                            if (soupAmount <= 2.1f && soupAmount >= 2.4f)
+                            if (soupAmount >= 2.1f && soupAmount <= 2.6f)
                         {
                             KeyUpSuccess(true);
                             KeyUpAfterJudgeText();
                         }
-                        else
+                        else if (soupAmount < 2.1f)
                         {
                             KeyUpLuck(true);
                             KeyUpAfterJudgeText();
@@ -462,12 +462,12 @@ public class PlayerScript : MonoBehaviour
 
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
-                            if (soupAmount <= 1.1f && soupAmount >= 1.4f)
+                            if (soupAmount >= 1.1f && soupAmount <= 1.6f)
                         {
                             KeyUpSuccess(true);
                             KeyUpAfterJudgeText();
                         }
-                        else
+                        else if (soupAmount < 1.1f)
                         {
                             KeyUpLuck(true);
                             KeyUpAfterJudgeText();
@@ -492,13 +492,13 @@ public class PlayerScript : MonoBehaviour
 
                         if (Input.GetKeyUp(KeyCode.Space))
                         {
-                            if (soupAmount <= 0.1f && soupAmount >= 0.4f)
+                            if (soupAmount >= 0.1f && soupAmount <= 0.6f)
                             {
                             KeyUpSuccess(true);
                             KeyUpAfterJudgeText();
                         }
-                            else
-                            {
+                        else if (soupAmount < 0.1f)
+                        {
                             KeyUpLuck(true);
                             KeyUpAfterJudgeText();
                         }
