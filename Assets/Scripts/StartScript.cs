@@ -23,15 +23,25 @@ public class StartScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            SceneManager.LoadScene("Main");
+            ToGame();
         }
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            SceneManager.LoadScene("Rule");
+            ToHelp();
         }
+    }
+
+    public void ToHelp()
+    {
+        SceneManager.LoadScene("Rule");
+    }
+
+    public void ToGame()
+    {
+        SceneManager.LoadScene("Main");
     }
 
 }
