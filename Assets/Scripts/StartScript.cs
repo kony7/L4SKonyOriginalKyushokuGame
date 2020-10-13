@@ -27,6 +27,11 @@ public class StartScript : MonoBehaviour
         {
             SceneManager.LoadScene("Main");
         }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            SceneManager.LoadScene("Rule");
+        }
     }
 
 }

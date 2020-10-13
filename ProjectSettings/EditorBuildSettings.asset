@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start.unity
     guid: 33faefb7924b7456bbffd2bf8cfda620
+  - enabled: 1
+    path: Assets/Scenes/Rule.unity
+    guid: bacc88528a167405cb62cb7f8594f99c
+  - enabled: 1
+    path: Assets/Scenes/Sousa.unity
+    guid: 6dc7274b96fad4a4baf98fc12447ddb5
   m_configObjects: {}
