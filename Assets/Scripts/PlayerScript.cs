@@ -178,31 +178,31 @@ public class PlayerScript : MonoBehaviour
                     {
                         sidedishAmount -= 1;
                     }
-
-                    if (Input.GetKeyUp(KeyCode.Space))
-                    {
-                        if (sidedishAmount == 9)
-                        {
-                            KeyUpSuccess(false);
-                            sidedishjudge = false;
-                        }
-                        else if(sidedishAmount < 9)
-                        {
-                            KeyUpLuck(false);
-                            sidedishjudge = true;
-                        }
-                        else
-                        {
-                            ServingOver(false);
-                            sidedishjudge = true;
-                        }
-                    }
-                   
                 }
                 else
                 {
                     
                 }
+
+                if (Input.GetKeyUp(KeyCode.Space))
+                {
+                    if (sidedishAmount == 9)
+                    {
+                        KeyUpSuccess(false);
+                        sidedishjudge = false;
+                    }
+                    else if (sidedishAmount < 9)
+                    {
+                        KeyUpLuck(false);
+                        sidedishjudge = true;
+                    }
+                    else if (sidedishAmount > 9)
+                    {
+                        ServingOver(false);
+                        sidedishjudge = true;
+                    }
+                }
+
                 break;
 
             case 1:
@@ -218,28 +218,29 @@ public class PlayerScript : MonoBehaviour
                         sidedishAmount -= 1;
                     }
 
-                    if (Input.GetKeyUp(KeyCode.Space))
-                    {
-                        if (sidedishAmount == 7)
-                        {
-                            KeyUpSuccess(false);
-                            sidedishjudge = false;
-                        }
-                        else if(sidedishAmount < 7)
-                        {
-                            KeyUpLuck(false);
-                            sidedishjudge = true;
-                        }
-                        else
-                        {
-                            ServingOver(false);
-                            sidedishjudge = true;
-                        }
-                    }
                 }
                 else
                 {
 
+                }
+
+                if (Input.GetKeyUp(KeyCode.Space))
+                {
+                    if (sidedishAmount == 7)
+                    {
+                        KeyUpSuccess(false);
+                        sidedishjudge = false;
+                    }
+                    else if (sidedishAmount < 7)
+                    {
+                        KeyUpLuck(false);
+                        sidedishjudge = true;
+                    }
+                    else if (sidedishAmount > 7)
+                    {
+                        ServingOver(false);
+                        sidedishjudge = true;
+                    }
                 }
                 break;
 
@@ -256,29 +257,31 @@ public class PlayerScript : MonoBehaviour
                         sidedishAmount -= 1;
                     }
 
-                    if (Input.GetKeyUp(KeyCode.Space))
-                    {
-                        if (sidedishAmount == 5)
-                        {
-                            KeyUpSuccess(false);
-                            sidedishjudge = false;
-                        }
-                        else if(sidedishAmount < 5)
-                        {
-                            KeyUpLuck(false);
-                            sidedishjudge = true;
-                        }
-                        else
-                        {
-                            ServingOver(false);
-                            sidedishjudge = true;
-                        }
-                    }
                 }
                 else
                 {
 
                 }
+
+                if (Input.GetKeyUp(KeyCode.Space))
+                {
+                    if (sidedishAmount == 5)
+                    {
+                        KeyUpSuccess(false);
+                        sidedishjudge = false;
+                    }
+                    else if (sidedishAmount < 5)
+                    {
+                        KeyUpLuck(false);
+                        sidedishjudge = true;
+                    }
+                    else if (sidedishAmount > 5)
+                    {
+                        ServingOver(false);
+                        sidedishjudge = true;
+                    }
+                }
+
                 break;
 
             case 3:
@@ -293,29 +296,29 @@ public class PlayerScript : MonoBehaviour
                     {
                         sidedishAmount -= 1;
                     }
-
-                    if (Input.GetKeyUp(KeyCode.Space))
-                    {
-                        if (sidedishAmount == 3)
-                        {
-                            KeyUpSuccess(false);
-                            sidedishjudge = false;
-                        }
-                        else if(sidedishAmount < 3)
-                        {
-                            KeyUpLuck(false);
-                            sidedishjudge = true;
-                        }
-                        else
-                        {
-                            ServingOver(false);
-                            sidedishjudge = true;
-                        }
-                    }
                 }
                 else
                 {
 
+                }
+
+                if (Input.GetKeyUp(KeyCode.Space))
+                {
+                    if (sidedishAmount == 3)
+                    {
+                        KeyUpSuccess(false);
+                        sidedishjudge = false;
+                    }
+                    else if (sidedishAmount < 3)
+                    {
+                        KeyUpLuck(false);
+                        sidedishjudge = true;
+                    }
+                    else if (sidedishAmount > 3)
+                    {
+                        ServingOver(false);
+                        sidedishjudge = true;
+                    }
                 }
                 break;
 
@@ -332,28 +335,28 @@ public class PlayerScript : MonoBehaviour
                         sidedishAmount -= 1;
                     }
 
-                    if (Input.GetKeyUp(KeyCode.Space))
-                    {
-                        if (sidedishAmount == 1)
-                        {
-                            KeyUpSuccess(false);
-                            sidedishjudge = false;
-                        }
-                        else if(sidedishAmount < 1)
-                        {
-                            KeyUpLuck(false);
-                            sidedishjudge = true;
-                        }
-                        else
-                        {
-                            ServingOver(false);
-                            sidedishjudge = true;
-                        }
-                    }
                 }
                 else
                 {
                     
+                }
+                if (Input.GetKeyUp(KeyCode.Space))
+                {
+                    if (sidedishAmount == 1)
+                    {
+                        KeyUpSuccess(false);
+                        sidedishjudge = false;
+                    }
+                    else if (sidedishAmount < 1)
+                    {
+                        KeyUpLuck(false);
+                        sidedishjudge = true;
+                    }
+                    else if (sidedishAmount > 1)
+                    {
+                        ServingOver(false);
+                        sidedishjudge = true;
+                    }
                 }
                 break;
         }
