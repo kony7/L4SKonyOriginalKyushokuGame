@@ -361,124 +361,124 @@ public class PlayerScript : MonoBehaviour
         switch (soupRequestNumber)
             {
                 case 0:
-                    if (soupAmount < 5.0f)
+                if (soupAmount < 5.0f)
+                {
+                    if (Input.GetKey(KeyCode.Space))
                     {
-                        if (Input.GetKey(KeyCode.Space))
-                        {
-                        beforeServing = false;
                         soupAmount += 0.1f;
-                        }
-
-                        if (Input.GetKeyUp(KeyCode.Space))
-                        {
-                        finishServing = true;
-                        if (soupAmount >= 4.1f && soupAmount <= 4.6f)
-                        {
-                            KeyUpSuccess(true);
-                            KeyUpAfterJudgeText();
-                        }
-                        else if(soupAmount < 4.1f)
-                        {
-                            KeyUpLuck(true);
-                            KeyUpAfterJudgeText();
-                        }
                     }
                 }
-                else
+
+                if (Input.GetKeyUp(KeyCode.Space))
                 {
-                    ServingOver(true);
-                    KeyUpAfterJudgeText();
+                    if (soupAmount >= 4.1f && soupAmount <= 4.6f)
+                    {
+                        KeyUpSuccess(true);
+                        KeyUpAfterJudgeText();
+                    }
+                    else if (soupAmount < 4.1f)
+                    {
+                        KeyUpLuck(true);
+                        KeyUpAfterJudgeText();
+                    }
+                    else if (soupAmount > 4.6f)
+                    {
+                        ServingOver(true);
+                        KeyUpAfterJudgeText();
+                    }
                 }
+                
                 Debug.Log(soupAmount);
-                    break;
+                break;
 
 
                 case 1:
-                    if (soupAmount < 4.0f)
+                if (soupAmount < 4.0f)
+                {
+                    if (Input.GetKey(KeyCode.Space))
                     {
-                        if (Input.GetKey(KeyCode.Space))
-                        {
-                            soupAmount += 0.1f;
-                        }
-
-                        if (Input.GetKeyUp(KeyCode.Space))
-                        {
-                         if (soupAmount >= 3.1f && soupAmount <= 3.6f)
-                        {
-                            KeyUpSuccess(true);
-                            KeyUpAfterJudgeText();
-                        }
-                        else if (soupAmount < 3.1f)
-                        {
-                            KeyUpLuck(true);
-                            KeyUpAfterJudgeText();
-                        }
+                        soupAmount += 0.1f;
                     }
                 }
-                else
+
+                if (Input.GetKeyUp(KeyCode.Space))
                 {
-                    ServingOver(true);
-                    KeyUpAfterJudgeText();
+                    if (soupAmount >= 3.1f && soupAmount <= 3.6f)
+                    {
+                        KeyUpSuccess(true);
+                        KeyUpAfterJudgeText();
+                    }
+                    else if (soupAmount < 3.1f)
+                    {
+                        KeyUpLuck(true);
+                        KeyUpAfterJudgeText();
+                    }
+                    else if (soupAmount > 3.6f)
+                    {
+                        ServingOver(true);
+                        KeyUpAfterJudgeText();
+                    }
                 }
+
                 Debug.Log(soupAmount);
                 break;
 
                 case 2:
-                    if (soupAmount < 3.0f)
+                if (soupAmount < 3.0f)
+                {
+                    if (Input.GetKey(KeyCode.Space))
                     {
-                        if (Input.GetKey(KeyCode.Space))
-                        {
-                            soupAmount += 0.1f;
-                        }
-
-                        if (Input.GetKeyUp(KeyCode.Space))
-                        {
-                            if (soupAmount >= 2.1f && soupAmount <= 2.6f)
-                        {
-                            KeyUpSuccess(true);
-                            KeyUpAfterJudgeText();
-                        }
-                        else if (soupAmount < 2.1f)
-                        {
-                            KeyUpLuck(true);
-                            KeyUpAfterJudgeText();
-                        }
+                        soupAmount += 0.1f;
                     }
                 }
-                else
+                if (Input.GetKeyUp(KeyCode.Space))
                 {
-                    ServingOver(true);
-                    KeyUpAfterJudgeText();
+                    if (soupAmount >= 2.1f && soupAmount <= 2.6f)
+                    {
+                        KeyUpSuccess(true);
+                        KeyUpAfterJudgeText();
+                    }
+                    else if (soupAmount < 2.1f)
+                    {
+                        KeyUpLuck(true);
+                        KeyUpAfterJudgeText();
+                    }
+                    else if (soupAmount > 2.6f)
+                    {
+                        ServingOver(true);
+                        KeyUpAfterJudgeText();
+                    }
                 }
+                
                 Debug.Log(soupAmount);
                     break;
 
                 case 3:
-                    if (soupAmount < 2.0f)
+                if (soupAmount < 2.0f)
+                {
+                    if (Input.GetKey(KeyCode.Space))
                     {
-                        if (Input.GetKey(KeyCode.Space))
-                        {
-                            soupAmount += 0.1f;
-                        }
-
-                        if (Input.GetKeyUp(KeyCode.Space))
-                        {
-                            if (soupAmount >= 1.1f && soupAmount <= 1.6f)
-                        {
-                            KeyUpSuccess(true);
-                            KeyUpAfterJudgeText();
-                        }
-                        else if (soupAmount < 1.1f)
-                        {
-                            KeyUpLuck(true);
-                            KeyUpAfterJudgeText();
-                        }
+                        soupAmount += 0.1f;
                     }
                 }
-                else
+
+                if (Input.GetKeyUp(KeyCode.Space))
                 {
-                    ServingOver(true);
-                    KeyUpAfterJudgeText();
+                    if (soupAmount >= 1.1f && soupAmount <= 1.6f)
+                    {
+                        KeyUpSuccess(true);
+                        KeyUpAfterJudgeText();
+                    }
+                    else if (soupAmount < 1.1f)
+                    {
+                        KeyUpLuck(true);
+                        KeyUpAfterJudgeText();
+                    }
+                    else if (soupAmount > 1.6f)
+                    {
+                        ServingOver(true);
+                        KeyUpAfterJudgeText();
+                    }
                 }
                 Debug.Log(soupAmount);
                     break;
@@ -490,7 +490,6 @@ public class PlayerScript : MonoBehaviour
                     {
                         soupAmount += 0.1f;
                     }
-
                 }
 
                 if (Input.GetKeyUp(KeyCode.Space))
@@ -502,9 +501,10 @@ public class PlayerScript : MonoBehaviour
                     }
                     else if (soupAmount < 0.1f)
                     {
-                            KeyUpLuck(true);
-                            KeyUpAfterJudgeText();
-                    }else if(soupAmount > 0.6f)
+                         KeyUpLuck(true);
+                         KeyUpAfterJudgeText();
+                    }
+                    else if(soupAmount > 0.6f)
                     {
                         ServingOver(true);
                         KeyUpAfterJudgeText();
