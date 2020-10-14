@@ -15,7 +15,8 @@ public class PlayerScript : MonoBehaviour
 
     float soupAmount;
     float sidedishAmount;
-
+    float timer;
+    float timerMax = 30;
 
     string[] amountRequestText = new string[]{"大盛り","多め","普通","少なめ","少し" };
 
@@ -25,8 +26,11 @@ public class PlayerScript : MonoBehaviour
     public bool endding = false;
 
     bool sidedishjudge;
+    bool timerEnabled = false;
 
     private CreateStudentScript createStudentScript;
+
+    public Text timerLabel;
 
     public GameObject requestText;
     public GameObject ending;
@@ -63,9 +67,15 @@ public class PlayerScript : MonoBehaviour
     public GameObject sidedish09;
     public GameObject sidedish10;
 
+    private void Awake()
+    {
+        timer = timerMax;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        StartTimer();
         createrStudent = GameObject.Find("CreaterStudent");
         createStudentScript = createrStudent.GetComponent<CreateStudentScript>();
         createStudentScript.createNewStudent();
@@ -76,6 +86,19 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timerLabel.text = "残り時間:" + Mathf.FloorToInt(timer).ToString() + "秒";
+        if (timerEnabled)
+        {
+            timer -= Time.deltaTime;
+
+            if(timer < 0.0f)
+            {
+                Invoke("goToEnding", 0.1f);
+                StopTimer();
+            }
+        }
+      
+
         createrStudent = GameObject.Find("CreaterStudent");
 
         if(soupAmount == 0)
@@ -521,8 +544,18 @@ public class PlayerScript : MonoBehaviour
         {
             Invoke("goToEnding", 0.6f);
         }
+
     }
 
+    public void StartTimer()
+    {
+        timerEnabled = true;
+    }
+
+    public void StopTimer()
+    {
+        timerEnabled = false;
+    }
    
     void textRequest()
     {
