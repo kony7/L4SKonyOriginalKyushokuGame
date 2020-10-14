@@ -957,7 +957,9 @@ public class PlayerScript : MonoBehaviour
         gameUIs.SetActive(false);
         scoreText.GetComponent<Text>().text = score.ToString();
         ending.SetActive(true);
-        
+
+        Destroy(judgeTextsidedish);
+        Destroy(judgeTextsoup);
 
         if (score > highScore)
         {
