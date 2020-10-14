@@ -69,6 +69,7 @@ public class PlayerScript : MonoBehaviour
         createrStudent = GameObject.Find("CreaterStudent");
         createStudentScript = createrStudent.GetComponent<CreateStudentScript>();
         createStudentScript.createNewStudent();
+        textRequest();
         highScore = PlayerPrefs.GetInt("HIGHSCORE", 0);
     }
 
@@ -524,7 +525,7 @@ public class PlayerScript : MonoBehaviour
     {
         soupRequestNumber = Random.Range(0, 5);
         sidedishRequestNumber = Random.Range(0, 5);
-        requestText.GetComponent<Text>().text = "スープ" + amountRequestText[soupRequestNumber] + " おかず" + amountRequestText[sidedishRequestNumber];
+        requestText.GetComponent<Text>().text = " おかず" + amountRequestText[sidedishRequestNumber] + " スープ" + amountRequestText[soupRequestNumber];
   
     }
 
