@@ -8,7 +8,7 @@ public class PlayerScript : MonoBehaviour
 {
 
     int score;
-    int life = 5;
+    //int life = 5;
     int soupRequestNumber;
     int sidedishRequestNumber;
     int highScore;
@@ -540,10 +540,10 @@ public class PlayerScript : MonoBehaviour
                     break;
             }
 
-        if(life <= 0)
-        {
-            Invoke("goToEnding", 0.6f);
-        }
+        //if(life <= 0)
+        //{
+        //    Invoke("goToEnding", 0.6f);
+        //}
 
     }
 
@@ -567,19 +567,19 @@ public class PlayerScript : MonoBehaviour
 
     void ServingOver(bool souptrue)
     {
-        lifePointText.GetComponent<Text>().text = "LIFE：" + life;
+        //lifePointText.GetComponent<Text>().text = "LIFE：" + life;
         unSucceseAudio.GetComponent<AudioSource>().Play();
 
         if (souptrue == true)
         {
-            if(sidedishjudge == true)
-            {
-                life -= 1;
-            }
-            else
-            {
+            //if(sidedishjudge == true)
+            //{
+            //    //life -= 1;
+            //}
+            //else
+            //{
 
-            }
+            //}
 
             judgeTextsoup.GetComponent<Text>().text = "多い";
         }
@@ -609,15 +609,15 @@ public class PlayerScript : MonoBehaviour
 
     void KeyUpLuck(bool souptrue)
     {
-        lifePointText.GetComponent<Text>().text = "LIFE：" + life;
+        //lifePointText.GetComponent<Text>().text = "LIFE：" + life;
         unSucceseAudio.GetComponent<AudioSource>().Play();
 
         if (souptrue == true)
         {
-            if (sidedishjudge == true)
-            {
-                life -= 1;
-            }
+            //if (sidedishjudge == true)
+            //{
+            //    life -= 1;
+            //}
 
             judgeTextsoup.GetComponent<Text>().text = "少な";
         }
@@ -634,7 +634,8 @@ public class PlayerScript : MonoBehaviour
         soupAmount = 0;
         sidedishAmount = 0;
         textRequest();
-        if (life > 0)
+      
+        if (timer > 0.0f)
         {
             createStudentScript.createNewStudent();
         }
@@ -642,6 +643,7 @@ public class PlayerScript : MonoBehaviour
         {
 
         }
+
         beforeServing = true;
     }
 
