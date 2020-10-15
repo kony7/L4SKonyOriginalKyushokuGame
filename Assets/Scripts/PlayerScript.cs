@@ -31,6 +31,7 @@ public class PlayerScript : MonoBehaviour
     private CreateStudentScript createStudentScript;
 
     public Text timerLabel;
+    public Text successScore;
 
     public GameObject requestText;
     public GameObject ending;
@@ -634,6 +635,7 @@ public class PlayerScript : MonoBehaviour
         soupAmount = 0;
         sidedishAmount = 0;
         textRequest();
+        successScore.text = "配膳成功:" + score.ToString();
       
         if (timer > 0.0f)
         {
